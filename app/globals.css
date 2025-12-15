@@ -8,19 +8,64 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #050629;
+    --foreground: #fff;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
+@layer utilities {
+  .site-width {
+    @apply mx-auto w-full max-w-525 px-6 md:px-8 lg:px-24;
+  }
+
+  .site-width-md {
+    @apply mx-auto w-full max-w-390 px-4 sm:px-6 lg:px-8;
+  }
+
+  .site-width-sm {
+    @apply px-6 md:px-8 lg:px-24 max-w-330 2xl:px-0 2xl:max-w-330 mx-auto;
+  }
+
+  .h1-tag {
+    @apply text-[40px] xl:text-[52px] 2xl:text-[84px] font-bold;
+  }
+
+  .h2-tag {
+    @apply text-[30px] xl:text-[40px] 2xl:text-[56px] font-bold;
+  }
+
+  .h3-tag {
+    @apply text-[24px] sm:text-[30px] xl:text-[30px] 2xl:text-[40px] font-bold;
+  }
+
+  .h4-tag {
+    @apply text-[20px] lg:text-[26px] font-semibold leading-tight;
+  }
+
+  .p-tag {
+    @apply text-[16px] xl:text-xl 2xl:text-2xl font-medium leading-tight;
+  }
+
+  .text-thm {
+    color: #2BBA4D;
+  }
+
+  .bg-thm {
+    background-color: #2BBA4D;
+  }
 }

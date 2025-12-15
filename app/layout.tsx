@@ -1,14 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Saira } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
+import { ThemeProvider } from "./lib/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+const siara = Saira({
+  variable: "--font-saira",
   subsets: ["latin"],
 });
 
@@ -23,11 +33,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+    <html lang="en" suppressHydrationWarning>
+      <body suppressHydrationWarning
+        className={`${geistSans.variable} ${geistMono.variable} ${siara.variable} ${inter.variable}  antialiased`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark" // Change from "system" to "light" for consistent SSR
+          enableSystem
+          disableTransitionOnChange={false} >
+          <div className="bg-white  dark:bg-[#050629]">
+            <Navbar />
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
