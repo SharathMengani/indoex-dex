@@ -19,7 +19,7 @@ export const useAssetsStore = create<AssetsState>((set: any) => ({
     loading: false,
     error: null,
 
-    fetchAssets: async () => {
+    fetchAssets: async () => { 
         set({ loading: true, error: null });
 
         try {
