@@ -20,7 +20,7 @@ export const StepsSection = () => {
                         <p className="dark:text-[#b1b5c3] p-tag ">Rockie has a variety of features that make it the best place to start trading</p>
                         <div className="space-y-14 mt-20">
                             {steps.map((step, index) => (
-                                <div className="flex gap-6">
+                                <div className="flex gap-6" key={step.title}>
                                     <div className="flex whitespace-nowrap justify-center items-center p-6 border-2 border-[#27A043] backdrop-blur-3xl rounded-full bg-[#101e415c] text-thm w-18 h-18 font-saira font-bold">STEP {index + 1}</div>
                                     <div>
                                         <h3 className="dark:text-white h4-tag mb-2">{step.title}</h3>
