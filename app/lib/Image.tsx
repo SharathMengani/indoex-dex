@@ -1,44 +1,32 @@
-"use client"
-
-
+"use client";
 
 import React, { useEffect, useState } from "react";
-import NextImage from "next/image"
+import NextImage from "next/image";
 import { cn } from "./cn";
 
-/**
- * Image component that handles the loading state and displays a placeholder until the image has loaded.
- * 
- * @param {string | undefined} src - The source URL of the image. If undefined, the image will not be displayed.
- * @param {string} [alt] - The alt text for the image. Optional, but recommended for accessibility.
- * @param {string} [wrapperClassName] - Additional classes to apply to the wrapper div element.
- * @param {string} [className] - Additional classes to apply to the image element.
- * @param {React.ImgHTMLAttributes<HTMLImageElement>} ImageProps - Any other standard attributes for an <img> element.
- * 
- */
 type ImageProps = {
-    src: string | undefined;
+    src?: string;
     alt: string;
     wrapperClassName?: string;
     className?: string;
-    loading?:string
-} & React.ImgHTMLAttributes<HTMLImageElement>;
+    sizes?: string; // ✅ ADD THIS
+    loading?: "lazy" | "eager";
+};
 
 const AppImage = ({
     src,
     alt,
     wrapperClassName,
     className,
-    loading,
-    ...ImageProps
+    sizes, // ✅ sensible default for icons/logos
+    loading = "lazy",
 }: ImageProps) => {
-    const [showImage, setShowImage] = useState(false);
+    const [loaded, setLoaded] = useState(false);
 
+    useEffect(() => {
+        if (!src) setLoaded(false);
+    }, [src]);
 
-
-    useEffect(()=>{
-        if(!src) setShowImage(false);
-    }, [src])
     return (
         <div
             className={cn(
@@ -46,21 +34,25 @@ const AppImage = ({
                 wrapperClassName
             )}
         >
-            {src && alt && <NextImage
-                fill
-                src={src}
-                alt={alt ?? ""}
-                className={cn("w-full h-full object-cover absolute", className, {
-                    "": !showImage
-                })}
-                onError={() => setShowImage(false)}
-                onLoad={() => setShowImage(true)}
-                loading={loading}
-            />}
-            {!showImage && (
-                <div className="absolute w-full h-full">
-                    <div className="bg-gray-200 w-full h-full animate-pulse"></div>
-                </div>
+            {src && (
+                <NextImage
+                    fill
+                    src={src}
+                    alt={alt}
+                    sizes={sizes} // ✅ FIXED
+                    className={cn(
+                        "absolute inset-0 object-contain transition-opacity",
+                        loaded ? "opacity-100" : "opacity-0",
+                        className
+                    )}
+                    onLoad={() => setLoaded(true)}
+                    onError={() => setLoaded(false)}
+                    loading={loading}
+                />
+            )}
+
+            {!loaded && (
+                <div className="absolute inset-0 bg-gray-200 animate-pulse" />
             )}
         </div>
     );

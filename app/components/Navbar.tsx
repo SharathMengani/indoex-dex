@@ -13,18 +13,18 @@ export default function Navbar() {
   const [mode, setMode] = useState('exchange');
 
   return (
-    <header className="w-full py-2 dark:border-b dark:border-white/10 dark:border ">
+    <header className="w-full py-2 dark:border-b dark:border-white/10 dark:border realtive z-51">
       <div className="site-width">
         <div className="flex h-16 items-center justify-between font-inter!">
 
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <AppImage
+            <AppImage sizes="w-[200px]"
               src="/images/logo.png"
               alt="User avatar"
               wrapperClassName="w-[200px] h-10  hidden dark:block" className="object-contain"
             />
-            <AppImage
+            <AppImage sizes="w-[200px]"
               src="/images/logo-dark.png"
               alt="User avatar"
               wrapperClassName="w-[200px] h-10 block dark:hidden" className="object-contain"

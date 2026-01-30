@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { CurrencyInterface } from "../Interfaces";
 
 export interface Asset {
     id: string;
@@ -8,7 +9,7 @@ export interface Asset {
 }
 
 interface AssetsState {
-    assets: Asset[];
+    assets: CurrencyInterface[];
     loading: boolean;
     error: string | null;
     fetchAssets: () => Promise<void>;
@@ -19,7 +20,7 @@ export const useAssetsStore = create<AssetsState>((set: any) => ({
     loading: false,
     error: null,
 
-    fetchAssets: async () => { 
+    fetchAssets: async () => {
         set({ loading: true, error: null });
 
         try {
@@ -32,7 +33,7 @@ export const useAssetsStore = create<AssetsState>((set: any) => ({
             const data = await res.json();
 
             set({
-                assets: data?.data ?? data, // adjust if API wraps response
+                assets: data?.cryptocurrencies ?? [],
                 loading: false,
             });
         } catch (err: any) {
