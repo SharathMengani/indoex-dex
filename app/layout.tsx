@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter, Saira } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
 import { ThemeProvider } from "./lib/ThemeProvider";
+import { Providers } from "./providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,16 +37,11 @@ export default function RootLayout({
       <body suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} ${siara.variable} ${inter.variable}  antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark" // Change from "system" to "light" for consistent SSR
-          enableSystem
-          disableTransitionOnChange={false} >
-          <div className="bg-white  dark:bg-[#050629]">
-            <Navbar />
+        <Providers >
+          <div className="bg-white  dark:bg-[#101428]">
             {children}
           </div>
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );

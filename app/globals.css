@@ -16,7 +16,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #050629;
+    --background: #101428;
     --foreground: #fff;
   }
 }
@@ -26,6 +26,7 @@ body {
   color: var(--foreground);
   font-family: "Inter", sans-serif;
   font-size: 16px;
+  line-height: normal;
 }
 
 @layer utilities {
@@ -68,4 +69,29 @@ body {
   .bg-thm {
     background-color: #2BBA4D;
   }
+
+  .font-saira {
+    font-family: 'Saira', sans-serif;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-flex;
+  gap: 3rem;
+  animation: marquee 18s linear infinite;
 }
