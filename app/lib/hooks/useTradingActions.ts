@@ -1,5 +1,5 @@
+"use client"
 import { useEffect, useMemo, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
 import { useAuthAddress } from "./useAuthAddress";
 import { useHyperliquidSocket } from "./useSocket";
 import { fetchPrices, getAllPerpMetas, getAllSpotMetas } from "../../components/Dexpages/Methods/FetchAvailPairs";
@@ -16,6 +16,7 @@ import { handlePlaceLongOrder } from "../../components/Dexpages/Methods/PlaceLon
 import { currencies } from "../Currencies";
 import { updateTradeMode } from "../../components/Dexpages/Methods/UpgradeTrade";
 import { changeLeverage } from "../../components/Dexpages/Methods/ChangeLeverage";
+import { useParams } from "next/navigation";
 
 const basePrices: Record<string, number> = { BTC: 97500, ETH: 3400, SOL: 175, ARB: 0.85, DOGE: 0.38, AVAX: 38, POL: 0.52 };
 const coinMapping: Record<string, string> = {

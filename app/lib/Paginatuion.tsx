@@ -1,3 +1,4 @@
+"use client";
 import ReactPaginate from "react-paginate";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 
@@ -20,7 +21,7 @@ const Pagination = ({ pageCount, onPageChange }: Props) => {
                 pageCount={pageCount}
                 marginPagesDisplayed={2}
                 pageRangeDisplayed={2}
-                onPageChange={({ selected }) => onPageChange(selected)}
+                onPageChange={({ selected }: { selected: any }) => onPageChange(selected)}
 
                 containerClassName="flex gap-2 justify-center py-0"
 

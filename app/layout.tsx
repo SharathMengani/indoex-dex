@@ -38,7 +38,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${siara.variable} ${inter.variable}  antialiased`}
       >
         <Providers >
-          <div className="bg-white  dark:bg-[#050629]">
+          <div className="bg-white  dark:bg-[#101428]">
             {children}
           </div>
         </Providers>

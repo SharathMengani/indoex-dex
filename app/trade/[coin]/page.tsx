@@ -41,7 +41,7 @@ const Trade = () => {
     return (
         <>
 
-            <div className="mt-5 text-sm p-2 pb-1">
+            <div className="mt-5 text-sm p-2 pb-1 dark:text-white">
                 {trading.errors.length > 0 && (
                     <div className="fixed top-4 right-4 z-50 space-y-2">
                         {trading.errors.map(err => (

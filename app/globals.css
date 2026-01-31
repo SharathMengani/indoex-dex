@@ -16,7 +16,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #050629;
+    --background: #101428;
     --foreground: #fff;
   }
 }

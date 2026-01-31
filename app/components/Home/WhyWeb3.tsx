@@ -23,9 +23,9 @@ export default function WhyWeb3() {
 
                 {/* Center Fixed Circle */}
                 <div className="absolute left-1/2 -translate-x-1/2 z-10 pointer-events-none">
-                    <div className="flex items-center justify-center w-84 h-84 rounded-full bg-[#050629] shadow-lg">
+                    <div className="flex items-center justify-center w-84 h-84 rounded-full bg-[#101428] shadow-lg">
                         <div className="flex items-center justify-center w-80 h-80 rounded-full bg-[#2BBA4D] shadow-lg">
-                            <div className="flex items-center justify-center w-45 h-45 rounded-full bg-[#050629] text-white font-semibold h3-tag">
+                            <div className="flex items-center justify-center w-45 h-45 rounded-full bg-[#101428] text-white font-semibold h3-tag">
                                 Web3
                             </div>
                         </div>
