@@ -598,26 +598,26 @@ export default function TradingForm({
        -------------------------- */
 
     return (
-        <div className="text-white p-3 space-y-3 flex flex-col justify-between h-full">
+        <div className="dark:text-white p-3 space-y-3 flex flex-col justify-between h-full">
             {/* Top Buttons */}
             <div className="space-y-3">
                 {spotMode != 'spot' &&
                     <div className="flex gap-2 mb-3 text-[13px] ">
                         {tradeMode &&
                             <button
-                                className="flex-1 py-1.5 rounded-md border border-[#37373c] cursor-pointer"
+                                className="flex-1 py-1.5 rounded-md border dark:border-[#232323] border-black/12 cursor-pointer"
                                 onClick={() => setTradeType("cross-isolated")}
                             >
                                 {tradeMode[0]?.toUpperCase()}{tradeMode?.slice(1)}
                             </button>}
                         <button
-                            className="flex-1 py-1.5 rounded-md border border-[#37373c] cursor-pointer"
+                            className="flex-1 py-1.5 rounded-md border dark:border-[#232323] border-black/12 cursor-pointer"
                             onClick={() => setTradeType("leverage")}
                         >
                             {leverage}X
                         </button>
                         {/* <button
-                        className="flex-1 py-1.5 rounded-md border border-[#37373c] cursor-pointer"
+                        className="flex-1 py-1.5 rounded-md border dark:border-[#232323] border-black/12 cursor-pointer"
                         onClick={() => setTradeType("position")}
                     >
                         M
@@ -630,7 +630,7 @@ export default function TradingForm({
                 <PositionPopup tradeType={tradeType} setTradeType={setTradeType} selectedCoin={selectedCoin ?? ''} />
 
                 {/* Tabs */}
-                <div className="flex space-x-6 text-[13px] font-medium border-b-2 border-[#2a2a32] pb-2 relative">
+                <div className="flex space-x-6 text-[13px] font-medium border-b-2 dark:border-[#232323] border-black/12 pb-2 relative">
                     {Tabs.map((t) => (
                         <>
                             <button
@@ -641,7 +641,7 @@ export default function TradingForm({
                                     if (t === "pro") setShowProMenu((s) => !s);
                                     else setShowProMenu(false);
                                 }}
-                                className={`cursor-pointer flex items-center gap-1 ${activeTab === t ? "text-white" : "text-white/75"}`}
+                                className={`cursor-pointer flex items-center gap-1 ${activeTab === t ? "dark:text-white" : "dark:text-white/75"}`}
                             >
                                 {t === "pro" ? proname : toTitleCase(t)}
                                 {t === "pro" && <MdOutlineKeyboardArrowDown className="text-lg" />}
@@ -651,7 +651,7 @@ export default function TradingForm({
 
                     {/* PRO DROPDOWN */}
                     {activeTab === "pro" && showProMenu && (
-                        <ul ref={proMenuRef} className={`absolute left-0 top-full mt-2 bg-black border border-[#2a2a32] rounded-lg p-3  w-40 flex flex-col gap-2 z-50`}>
+                        <ul ref={proMenuRef} className={`absolute left-0 top-full mt-2 bg-black border dark:border-[#232323] border-black/12 rounded-lg p-3  w-40 flex flex-col gap-2 z-50`}>
                             {filteredProOptions.map((option) => (
                                 <li
                                     key={option.value}
@@ -669,7 +669,7 @@ export default function TradingForm({
                 </div>
 
                 {/* Buy / Sell */}
-                <div className="relative flex bg-[#232323] text-white rounded-md overflow-hidden">
+                <div className="relative flex dark:bg-[#1e2441ab] bg-black/12 text-white rounded-md overflow-hidden">
                     <div
                         className={`absolute inset-y-0 w-1/2 transition-transform duration-300 ${side === "Buy" ? "translate-x-0 bg-[#2BC287]" : "translate-x-full bg-[#F74B60]"
                             }`}
@@ -684,14 +684,14 @@ export default function TradingForm({
                 {/* Available / Position */}
                 {!isSpot ? (
                     <>
-                        <div className="text-white/75 flex items-center justify-between text-[13px]">
+                        <div className="dark:text-white/75 text-black/75 flex items-center justify-between text-[13px]">
                             Available to trade :
                             <span>
                                 {getNumberTransformed(availablePerpBalance)} {options[1]}
                             </span>
                         </div>
 
-                        <div className="text-white/75 flex items-center justify-between text-[13px]">
+                        <div className="dark:text-white/75 text-black/75 flex items-center justify-between text-[13px]">
                             Current Position :
                             <span>
                                 {currentPositionSize} {selectedCoin}
@@ -699,7 +699,7 @@ export default function TradingForm({
                         </div>
                     </>
                 ) : (
-                    <div className="text-gray-400 flex items-center justify-between text-[13px]">
+                    <div className="dark:text-gray-400 flex items-center justify-between text-[13px]">
                         Available to trade :
                         <span>
                             {getNumberTransformed(spotAvailableBalance)}{" "}
@@ -716,7 +716,7 @@ export default function TradingForm({
                         <>
                             <div className="relative">
                                 <input {...numberOnly}
-                                    className="w-full bg-[#27272A] px-3 py-2 rounded-lg text-sm focus:outline-0"
+                                    className="w-full dark:bg-[#1e2441ab] bg-white border-black/12 dark:border-0 border px-3 py-2 rounded-lg text-sm focus:outline-0"
                                     placeholder={`Trigger Price (${toCurrency})`}
                                     value={triggerPrice ?? null}
                                     onChange={(e) => {
@@ -728,7 +728,7 @@ export default function TradingForm({
                                     onBlur={() => { setTouched((p) => ({ ...p, size: true })) }}
                                 />
 
-                                <span className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-300">{toCurrency}</span>
+                                <span className="absolute right-2 top-1/2 -translate-y-1/2 dark:text-gray-300 text-gray-500">{toCurrency}</span>
 
                             </div>
                             {showError("triggerPrice") && <p className="text-red-500 relative -top-2.5 text-xs ">{errors.triggerPrice}</p>}
@@ -740,13 +740,13 @@ export default function TradingForm({
                         <div className="relative">
                             <div className="relative">
                                 <input {...numberOnly}
-                                    className={`w-full bg-[#27272A] px-3 py-2 rounded-lg text-sm focus:outline-0 ${showError("price") ? "ring-1 ring-red-500" : ""}`}
+                                    className={`w-full dark:bg-[#1e2441ab] bg-white border-black/12 dark:border-0 border px-3 py-2 rounded-lg text-sm focus:outline-0 ${showError("price") ? "ring-1 ring-red-500" : ""}`}
                                     placeholder={"Enter Price"}
                                     value={price}
                                     onChange={(e) => { setPrice(handleDecimals(toCurrency, e.target.value)); setTouched((p) => ({ ...p, price: true })) }}
                                     onBlur={() => setTouched((p) => ({ ...p, price: true }))}
                                 />
-                                <span className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-300">{toCurrency}</span>
+                                <span className="absolute right-2 top-1/2 -translate-y-1/2 dark:text-gray-300 text-gray-500">{toCurrency}</span>
                             </div>
                             {showError("price") && <p className="text-red-500 relative -top-0.5 text-xs mt-1">{errors.price}</p>}
                         </div>
@@ -754,7 +754,7 @@ export default function TradingForm({
 
                     {/* Size / Total Size for TWAP */}
                     {proSelection.toLowerCase() !== "twap" ? (
-                        <div className={`flex bg-[#27272A] rounded-lg ${showError("size") ? "ring-1 ring-red-500" : ""}`}>
+                        <div className={`flex dark:bg-[#1e2441ab] bg-white border-black/12 dark:border-0 border rounded-lg ${showError("size") ? "ring-1 ring-red-500" : ""}`}>
                             <input {...numberOnly}
                                 className={`flex-1 px-3 py-2 text-sm focus:outline-0 bg-transparent`}
                                 placeholder="Size"
@@ -772,7 +772,7 @@ export default function TradingForm({
                             <TradeCurrencies inputCurrency={inputCurrency} setInputCurrency={setInputCurrency} options={options} />
                         </div>
                     ) : (
-                        <div className={`flex bg-[#27272A] rounded-lg ${showError("size") ? "ring-1 ring-red-500" : ""}`}>
+                        <div className={`flex dark:bg-[#1e2441ab] bg-white border-black/12 dark:border-0 border rounded-lg ${showError("size") ? "ring-1 ring-red-500" : ""}`}>
                             <input {...numberOnly}
                                 className={`flex-1 px-3 py-2 text-sm focus:outline-0 bg-transparent `}
                                 placeholder="Total Size"

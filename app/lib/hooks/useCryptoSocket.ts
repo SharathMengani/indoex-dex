@@ -1,6 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { socketUrl } from "../../utils";
-import type { Candle } from "../../components/Homepages/CryptoTable";
+export type Candle = {
+    t: number;   // open time (ms)
+    o: string;
+    h: string;
+    l: string;
+    c: string;   // CLOSE
+    v: string;
+};
 
 export const useCryprtoSocket = (market: string) => {
   const wsRef = useRef<WebSocket | null>(null);

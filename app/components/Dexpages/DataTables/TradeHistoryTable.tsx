@@ -12,14 +12,14 @@ export const TradeHistoryTable = ({ trades, symbolmapping }: { trades: any[], sy
             <TableWrapper>
                 <thead>
                     <tr className="sticky top-0">
-                        <th className="px-4 py-3 bg-black">Time</th>
-                        <th className="px-4 py-3 bg-black">Coin</th>
-                        <th className="px-4 py-3 bg-black">Direction</th>
-                        <th className="px-4 py-3 bg-black">Price</th>
-                        <th className="px-4 py-3 bg-black">Size</th>
-                        <th className="px-4 py-3 bg-black">Trade Value</th>
-                        <th className="px-4 py-3 bg-black">Fee</th>
-                        <th className="px-4 py-3 bg-black">Closed PNL</th>
+                        <th className="px-4 py-3">Time</th>
+                        <th className="px-4 py-3">Coin</th>
+                        <th className="px-4 py-3">Direction</th>
+                        <th className="px-4 py-3">Price</th>
+                        <th className="px-4 py-3">Size</th>
+                        <th className="px-4 py-3">Trade Value</th>
+                        <th className="px-4 py-3">Fee</th>
+                        <th className="px-4 py-3">Closed PNL</th>
                     </tr>
                 </thead>
 

@@ -27,7 +27,7 @@ export const SummaryCard = ({ proSelection,
     twapMinutes,
     selectedCoin }: SummaryCard) => {
     return (
-        <div className="space-y-1 mt-5 border-t pt-2 border-[#2A2A32]">
+        <div className="space-y-1 mt-5 border-t pt-2 dark:border-[#232323] border-black/12">
             {proSelection.toLowerCase() === "scale" &&
                 <Row label="Start" value={scaleStart || "N/A"} />
             }

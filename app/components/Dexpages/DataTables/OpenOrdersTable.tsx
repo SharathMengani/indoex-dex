@@ -20,18 +20,18 @@ export const OpenOrdersTable = ({ orders, cancelOrder, cancelAllOrders, symbolma
             <TableWrapper>
                 <thead>
                     <tr className="sticky top-0">
-                        <th className="px-4 py-3 bg-black">Time</th>
-                        <th className="px-4 py-3 bg-black">Type</th>
-                        <th className="px-4 py-3 bg-black">Coin</th>
-                        <th className="px-4 py-3 bg-black">Direction</th>
-                        <th className="px-4 py-3 bg-black">Size</th>
-                        <th className="px-4 py-3 bg-black">Original Size</th>
-                        <th className="px-4 py-3 bg-black">Order Value</th>
-                        <th className="px-4 py-3 bg-black">Price</th>
-                        <th className="px-4 py-3 bg-black">Reduce Only</th>
-                        <th className="px-4 py-3 bg-black">Trigger Conditions</th>
-                        <th className="px-4 py-3 bg-black">TP/SL</th>
-                        <th className="px-4 py-3 bg-black"><button onClick={() => cancelAllOrders('payload')} className={`${orders.length == 0 ? 'text-[#6D6D6F]' : 'text-[#2BC287]'}`} disabled={orders.length == 0}>Cancel All</button></th>
+                        <th className="px-4 py-3">Time</th>
+                        <th className="px-4 py-3">Type</th>
+                        <th className="px-4 py-3">Coin</th>
+                        <th className="px-4 py-3">Direction</th>
+                        <th className="px-4 py-3">Size</th>
+                        <th className="px-4 py-3">Original Size</th>
+                        <th className="px-4 py-3">Order Value</th>
+                        <th className="px-4 py-3">Price</th>
+                        <th className="px-4 py-3">Reduce Only</th>
+                        <th className="px-4 py-3">Trigger Conditions</th>
+                        <th className="px-4 py-3">TP/SL</th>
+                        <th className="px-4 py-3"><button onClick={() => cancelAllOrders('payload')} className={`${orders.length == 0 ? 'text-[#6D6D6F]' : 'text-[#2BC287]'}`} disabled={orders.length == 0}>Cancel All</button></th>
                     </tr>
                 </thead>
 

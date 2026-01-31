@@ -93,7 +93,7 @@ export const DexHeader = ({
     const changeColor = priceChange >= 0 ? "text-[#2BC287]" : "text-[#F74B60]"
 
     return (
-        <header className="px-4 py-3 flex items-center justify-between border-b border-[#232323]">
+        <header className="px-4 py-3 flex items-center justify-between border-b dark:border-[#232323] border-black/12 ">
             <div className="flex items-center gap-5 flex-wrap">
                 {/* Market Selector */}
                 <div className="relative" ref={dropdownRef}>
@@ -120,12 +120,12 @@ export const DexHeader = ({
                         />
 
                         {spotMode === "perp" && selectedPerpCurrency?.maxLeverage ? (
-                            <span className="bg-[#27272A] text-xs px-1 rounded flex items-center">
+                            <span className="dark:bg-[#1e2441ab] bg-black/12 text-xs px-1 rounded flex items-center">
                                 {selectedPerpCurrency.maxLeverage}
                                 <FaTimes className="ml-0.5" />
                             </span>
                         ) : (
-                            <span className="bg-emerald-500/20 text-[#2BC287] px-2 py-0.5 rounded-md text-xs">
+                            <span className="dark:bg-emerald-500/20 text-[#2BC287] px-2 py-0.5 rounded-md text-xs">
                                 Spot
                             </span>
                         )}
@@ -137,7 +137,7 @@ export const DexHeader = ({
                                 absolute z-50 mt-3 w-85
                                 rounded-2xl overflow-hidden
                                 bg-[#0B0B0F]
-                                border border-[#2A2A32]
+                                border dark:border-[#232323] border-black/12
                                 shadow-[0_20px_60px_rgba(0,0,0,0.6)]
                                 animate-in fade-in slide-in-from-top-2 duration-150
                             ">
@@ -173,7 +173,7 @@ export const DexHeader = ({
                                         className="
                                             w-full bg-white/4
                                             px-3 py-2 rounded-lg
-                                            text-sm text-white
+                                            text-sm dark:text-white text-black
                                             placeholder:text-white/40
                                             outline-none
                                             focus:ring-1 focus:ring-[#2BC287]"/>
@@ -190,10 +190,10 @@ export const DexHeader = ({
                                     <>
                                         {filteredPerpInfo.length === 0 ? (
                                             <div className="py-12 text-center">
-                                                <div className="text-sm text-white/50">
+                                                <div className="text-sm dark:text-white/50 text-black/50">
                                                     No perpetual markets found
                                                 </div>
-                                                <div className="text-xs text-white/30 mt-1">
+                                                <div className="text-xs dark:text-white/30 text-black/30 mt-1">
                                                     Try searching another symbol
                                                 </div>
                                             </div>
@@ -323,7 +323,7 @@ export const DexHeader = ({
 
                     {/* 24h Change */}
                     <div className="text-xs flex gap-1 flex-col whitespace-nowrap">
-                        <div className="text-white/75">24H Change</div>
+                        <div className="dark:text-white/75">24H Change</div>
                         <div className={`text-xs flex items-center gap-1 ${changeColor}`}>
                             <span>
                                 {marketData.change24hRate || 0}

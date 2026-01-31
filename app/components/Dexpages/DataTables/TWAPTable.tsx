@@ -88,15 +88,15 @@ const ActiveTable = ({ twapStates, cancelTwapOrder, mids, symbolmapping }: { twa
             <TableWrapper>
                 <thead>
                     <tr className="sticky top-0">
-                        <th className="px-4 py-3 bg-black">Created Time</th>
-                        <th className="px-4 py-3 bg-black">Coin</th>
-                        <th className="px-4 py-3 bg-black">Size</th>
-                        <th className="px-4 py-3 bg-black">Executed Size</th>
-                        <th className="px-4 py-3 bg-black">Avg Price</th>
-                        <th className="px-4 py-3 bg-black">Runtime / Total</th>
-                        <th className="px-4 py-3 bg-black">Reduce Only</th>
-                        <th className="px-4 py-3 bg-black">Randomize</th>
-                        <th className="px-4 py-3 bg-black">Terminate</th>
+                        <th className="px-4 py-3">Created Time</th>
+                        <th className="px-4 py-3">Coin</th>
+                        <th className="px-4 py-3">Size</th>
+                        <th className="px-4 py-3">Executed Size</th>
+                        <th className="px-4 py-3">Avg Price</th>
+                        <th className="px-4 py-3">Runtime / Total</th>
+                        <th className="px-4 py-3">Reduce Only</th>
+                        <th className="px-4 py-3">Randomize</th>
+                        <th className="px-4 py-3">Terminate</th>
                     </tr>
                 </thead>
 
@@ -184,15 +184,15 @@ const HistoryTable = ({ userTwapHistory, symbolmapping }: { userTwapHistory: any
             <TableWrapper>
                 <thead>
                     <tr className="sticky top-0">
-                        <th className="px-4 py-3 bg-black">Time</th>
-                        <th className="px-4 py-3 bg-black">Coin</th>
-                        <th className="px-4 py-3 bg-black">Total Size</th>
-                        <th className="px-4 py-3 bg-black">Executed Size</th>
-                        <th className="px-4 py-3 bg-black">Avg Size</th>
-                        <th className="px-4 py-3 bg-black">Total Runtime</th>
-                        <th className="px-4 py-3 bg-black">Reduce Only</th>
-                        <th className="px-4 py-3 bg-black">Randomize</th>
-                        <th className="px-4 py-3 bg-black">Status</th>
+                        <th className="px-4 py-3">Time</th>
+                        <th className="px-4 py-3">Coin</th>
+                        <th className="px-4 py-3">Total Size</th>
+                        <th className="px-4 py-3">Executed Size</th>
+                        <th className="px-4 py-3">Avg Size</th>
+                        <th className="px-4 py-3">Total Runtime</th>
+                        <th className="px-4 py-3">Reduce Only</th>
+                        <th className="px-4 py-3">Randomize</th>
+                        <th className="px-4 py-3">Status</th>
                     </tr>
                 </thead>
 
@@ -239,14 +239,14 @@ const FillHistoryTable = ({ userTwapSliceFills, symbolmapping }: { userTwapSlice
             <TableWrapper>
                 <thead>
                     <tr className="sticky top-0">
-                        <th className="px-4 py-3 bg-black">Time</th>
-                        <th className="px-4 py-3 bg-black">Coin</th>
-                        <th className="px-4 py-3 bg-black">Direction</th>
-                        <th className="px-4 py-3 bg-black">Price</th>
-                        <th className="px-4 py-3 bg-black">Size</th>
-                        <th className="px-4 py-3 bg-black">Trade Volume</th>
-                        <th className="px-4 py-3 bg-black">Fee</th>
-                        <th className="px-4 py-3 bg-black">Closed PNL</th>
+                        <th className="px-4 py-3">Time</th>
+                        <th className="px-4 py-3">Coin</th>
+                        <th className="px-4 py-3">Direction</th>
+                        <th className="px-4 py-3">Price</th>
+                        <th className="px-4 py-3">Size</th>
+                        <th className="px-4 py-3">Trade Volume</th>
+                        <th className="px-4 py-3">Fee</th>
+                        <th className="px-4 py-3">Closed PNL</th>
                     </tr>
                 </thead>
 

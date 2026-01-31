@@ -6,9 +6,6 @@
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -22,8 +19,6 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: "Inter", sans-serif;
   font-size: 16px;
   line-height: normal;
@@ -94,4 +89,71 @@ body {
   display: inline-flex;
   gap: 3rem;
   animation: marquee 18s linear infinite;
+}
+th {
+  text-align: left;
+}
+@keyframes letterPulse {
+    0% {
+        opacity: 0.3;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-6px);
+    }
+    100% {
+        opacity: 0.3;
+        transform: translateY(0);
+    }
+}
+@keyframes scanText {
+    0% { transform: translateX(-120%); }
+    100% { transform: translateX(220%); }
+}
+
+@keyframes wave {
+    0%   { transform: translateY(0); opacity: 0.5; }
+    50%  { transform: translateY(-8px); opacity: 1; }
+    100% { transform: translateY(0); opacity: 0.5; }
+}
+
+@keyframes flicker {
+    0%   { opacity: 0.2; }
+    10%  { opacity: 1; }
+    20%  { opacity: 0.4; }
+    30%  { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+
+@keyframes scan {
+    0%   { transform: translateX(-120%); }
+    100% { transform: translateX(320%); }
+}
+
+@keyframes ticker {
+    0%   { opacity: 0.3; }
+    50%  { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+
+/* TradingView header / top toolbar fix */
+
+:root.dark .tv-lightweight-charts,
+:root.dark .chart-page,
+:root.dark .layout__area--top,
+:root.dark .tv-header,
+:root.dark .tv-header__inner {
+  background-color: #0f172a !important; /* your dark bg */
+}
+
+:root.light .layout__area--top,
+:root.light .tv-header,
+:root.light .tv-header__inner {
+  background-color: #ffffff !important;
 }

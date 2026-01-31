@@ -35,12 +35,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning
-        className={`${geistSans.variable} ${geistMono.variable} ${siara.variable} ${inter.variable}  antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${siara.variable} ${inter.variable}  antialiased bg-white  dark:bg-[#101428]`}
       >
         <Providers >
-          <div className="bg-white  dark:bg-[#101428]">
             {children}
-          </div>
         </Providers>
       </body>
     </html>

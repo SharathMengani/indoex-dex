@@ -40,7 +40,7 @@ export const TradeCurrencies = ({
             <button
                 type="button"
                 onClick={() => setOpen((prev) => !prev)}
-                className={`${type == 'orderbook' ? 'text-[11px] px-0 py-0 gap-0' : 'text-sm px-3 py-2 bg-[#27272A] gap-2'}  rounded-xl text-white
+                className={`${type == 'orderbook' ? 'text-[11px] px-0 py-0 gap-0' : 'text-sm px-3 py-2 dark:bg-[#1e2441ab] gap-2'}  rounded-r-xl dark:text-white
                    flex items-center `}
             >
                 {inputCurrency}

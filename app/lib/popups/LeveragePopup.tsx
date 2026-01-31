@@ -60,7 +60,7 @@ const LeveragePopup = ({
                     max={leverageCoin?.maxLeverage}
                     onChange={handleChange}
                 />
-                <div className="border border-[#37373c] py-1.5 rounded text-center">
+                <div className="border dark:border-[#232323] border-black/12 py-1.5 rounded text-center">
                     {localLeverage}x
                 </div>
             </div>
