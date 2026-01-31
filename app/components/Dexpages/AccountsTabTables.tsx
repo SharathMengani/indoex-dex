@@ -123,20 +123,20 @@ export const AccountsTabsTables = ({ UpdatePosition, selectedCoin,
                         <button
                             key={t.id}
                             onClick={() => setActive(t)}
-                            className={`flex items-center cursor-pointer py-2 whitespace-nowrap transition relative ${isActive ? "text-[#2BC287]" : "opacity-50"}`}
+                            className={`flex items-center cursor-pointer py-2 whitespace-nowrap transition relative ${isActive ? "text-[#2BB94D]" : "opacity-50"}`}
                         >
                             <div className="relative pb-2">
                                 {t.tab}
 
                                 {/* underline */}
                                 <div
-                                    className={`h-0.5 w-6 absolute bottom-0 left-1/2 -translate-x-1/2 origin-center transition-all duration-300 ${isActive ? "bg-[#2BC287] scale-x-100" : "bg-white/0 scale-x-0"}`}
+                                    className={`h-0.5 w-6 absolute bottom-0 left-1/2 -translate-x-1/2 origin-center transition-all duration-300 ${isActive ? "bg-[#2BB94D] scale-x-100" : "bg-white/0 scale-x-0"}`}
                                 ></div>
                             </div>
 
                             {t?.count > 0 && (
                                 <span
-                                    className={`ml-2 rounded-full relative -top-1 px-2 py-0.5 text-[11px] font-semibold ${isActive ? "bg-[#2BC287] text-black" : "bg-white/80 text-black"} `} >
+                                    className={`ml-2 rounded-full relative -top-1 px-2 py-0.5 text-[11px] font-semibold ${isActive ? "bg-[#2BB94D] text-black" : "bg-white/80 text-black"} `} >
                                     {t.count}
                                 </span>
                             )}

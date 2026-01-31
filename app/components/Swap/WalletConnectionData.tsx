@@ -52,7 +52,7 @@ export const WalletConnection = ({ chains }: { chains: ChainsData[] }) => {
             {/* TRIGGER */}
             <button
                 onClick={() => setOpen((p) => !p)}
-                className="flex items-center gap-3 cursor-pointer hover:bg-[#232323] px-3 py-2 rounded-xl"
+                className="flex items-center gap-3 cursor-pointer hover:dark:bg-[#232323] bg-black/12 px-3 py-2 rounded-xl"
             >
                 <div className="relative">
                     <img
@@ -79,7 +79,7 @@ export const WalletConnection = ({ chains }: { chains: ChainsData[] }) => {
             {open && (
                 <div
                     onClick={(e) => e.stopPropagation()}
-                    className="absolute right-0 top-10 z-50 w-64 rounded-xl bg-[#232323] border-2 border-[#2a2a32] shadow-xl p-4"
+                    className="absolute right-0 top-10 z-50 w-64 rounded-xl dark:bg-[#232323] bg-black/12 border-2 dark:border-[#232323] border-black/12 shadow-xl p-4"
                 >
                     <div className="flex gap-6 text-white">
                         {/* ADDRESS */}

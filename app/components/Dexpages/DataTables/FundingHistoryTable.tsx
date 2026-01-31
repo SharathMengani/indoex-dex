@@ -11,12 +11,12 @@ export const FundingHistoryTable = ({ fundings }: { fundings: any[] }) => {
             <TableWrapper>
                 <thead>
                     <tr className="sticky top-0">
-                        <th className="px-4 py-3 bg-black">Time</th>
-                        <th className="px-4 py-3 bg-black">Coin</th>
-                        <th className="px-4 py-3 bg-black">Size</th>
-                        <th className="px-4 py-3 bg-black">Position Side</th>
-                        <th className="px-4 py-3 bg-black">Payment (USDC)</th>
-                        <th className="px-4 py-3 bg-black">Rate</th>
+                        <th className="px-4 py-3">Time</th>
+                        <th className="px-4 py-3">Coin</th>
+                        <th className="px-4 py-3">Size</th>
+                        <th className="px-4 py-3">Position Side</th>
+                        <th className="px-4 py-3">Payment (USDC)</th>
+                        <th className="px-4 py-3">Rate</th>
                     </tr>
                 </thead>
 
@@ -35,8 +35,8 @@ export const FundingHistoryTable = ({ fundings }: { fundings: any[] }) => {
 
                                     {/* Coin */}
                                     <td className={`px-4 py-3 ${Number(f.szi) >= 0
-                                            ? "text-[#2BC287]"
-                                            : "text-[#F74B60]"
+                                            ? "text-[#2BB94D]"
+                                            : "text-[#e90c27]"
                                             }`}>{f.coin}</td>
 
                                     {/* Size */}
@@ -49,9 +49,9 @@ export const FundingHistoryTable = ({ fundings }: { fundings: any[] }) => {
                                     {/* Position Side */}
                                     <td
                                         className={`px-4 py-3 ${Number(f.szi) > 0
-                                            ? "text-[#2BC287]"
+                                            ? "text-[#2BB94D]"
                                             : Number(f.szi) < 0
-                                                ? "text-[#F74B60]"
+                                                ? "text-[#e90c27]"
                                                 : ""
                                             }`}
                                     >
@@ -65,8 +65,8 @@ export const FundingHistoryTable = ({ fundings }: { fundings: any[] }) => {
                                     {/* Payment (USDC) */}
                                     <td
                                         className={`px-4 py-3 ${Number(f.usdc) >= 0
-                                            ? "text-[#2BC287]"
-                                            : "text-[#F74B60]"
+                                            ? "text-[#2BB94D]"
+                                            : "text-[#e90c27]"
                                             }`}
                                     >
                                         {f.usdc}

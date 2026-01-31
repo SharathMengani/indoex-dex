@@ -86,7 +86,7 @@ export const SwapForm = () => {
                                                     handleSwapCurrencies();
                                                     setIsSwap((prev) => !prev);
                                                 }}
-                                                className="border-2 border-[#2a2a32] p-2 rounded-full bg-black"
+                                                className="border-2 dark:border-[#232323] border-black/12 p-2 rounded-full bg-black"
                                             >
 
                                                 <AiOutlineSwap
@@ -123,7 +123,7 @@ export const SwapForm = () => {
                                     </div>} </> :
                                 <SwapBoxSkeleton />}
                             {!isLoading && fromCurrency &&
-                                <div className="border-2 border-[#2a2a32] rounded-lg px-5 py-4 gap-2">
+                                <div className="border-2 dark:border-[#232323] border-black/12 rounded-lg px-5 py-4 gap-2">
                                     <label htmlFor="" className="text-white/75 font-semibold mb-2">Enter Amount</label>
                                     <div className="flex items-center justify-between">
                                         <div className="flex items-center gap-3 pt-2">

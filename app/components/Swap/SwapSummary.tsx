@@ -65,7 +65,7 @@ export default function SwapSummary({
     };
 
     return (
-        <div className="w-full max-w-md mx-auto my-0 rounded-2xl bg-[#232323] p-4 text-white shadow-lg space-y-4 relative overflow-hidden">
+        <div className="w-full max-w-md mx-auto my-0 rounded-2xl dark:bg-[#232323] bg-black/12 p-4 text-white shadow-lg space-y-4 relative overflow-hidden">
 
             {/* Close */}
 

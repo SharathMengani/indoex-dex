@@ -33,7 +33,26 @@ export const useTradingEngine = () => {
 
     const [pairmappingid, setPairMappingId] = useState<string>("");
     const { address, login, user, createWallet, wallets } = useAuthAddress();
-    const { market, vendor } = useParams<{ market: string, vendor: string }>();
+    const params = useParams();
+    const markets = params.market as string[] | undefined;
+
+    const [market, setMarket] = useState<string | null>(null);
+    const [vendor, setVendor] = useState<string | null>(null);
+
+    useEffect(() => {
+        if (!markets) return;
+
+        if (markets.length === 1) {
+            setMarket(markets[0]);
+            setVendor(null);
+        }
+
+        if (markets.length === 2) {
+            setMarket(markets[0]);
+            setVendor(markets[1]);
+        }
+    }, [markets]);
+
     const spotMode = useMemo(() => {
         return vendor ? 'spot' : 'perp'
     }, [vendor]);

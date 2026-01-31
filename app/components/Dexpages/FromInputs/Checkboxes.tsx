@@ -19,7 +19,7 @@ interface CheckboxProps {
 export const Checkboxes = (props: CheckboxProps) => {
     return (
         <>
-            <div className="flex items-center gap-3 text-xs text-gray-300 justify-between">
+            <div className="flex items-center gap-3 text-xs dark:text-gray-300 justify-between">
                 <div className="space-y-2">
 
                     {(props.activeTab === "market" || props.activeTab === "limit") && props.spotMode != 'spot' && (
@@ -34,13 +34,13 @@ export const Checkboxes = (props: CheckboxProps) => {
                                         }
                                         props.setReduceOnly(false);
                                     }}
-                                    className="accent-[#2BC287]"
+                                    className="accent-[#2BB94D]"
                                 />
                                 Take Profit / Stop Loss
                             </label>
 
                             {props.hover == 'tpsl' &&
-                                <span className="transition absolute left-0 bottom-5 bg-[#27272A] text-white text-xs p-2 rounded w-62.5 shadow-2xl z-10">
+                                <span className="transition absolute left-0 bottom-5 dark:bg-[#1e2441fd] bg-white border-black/12 dark:border-0 border text-xs p-2 rounded w-62.5 shadow-2xl z-10">
                                     Places simple market TP/SL orders. For advanced features such as limit
                                     prices or partial TP/SL, set TP/SL on an open position instead.
                                 </span>}
@@ -59,13 +59,13 @@ export const Checkboxes = (props: CheckboxProps) => {
                                         }
                                         props.setReduceOnly(!props.reduceOnly);
                                     }}
-                                    className="accent-[#2BC287]"
+                                    className="accent-[#2BB94D]"
                                 />
                                 Reduce-Only
                             </label>
 
                             {props.hover == 'reduce' &&
-                                <span className="transition absolute left-0 bottom-5 bg-[#27272A] text-white text-xs p-2 rounded w-62.5 shadow-2xl z-10">
+                                <span className="transition absolute left-0 bottom-5 dark:bg-[#1e2441fd] bg-white border-black/12 dark:border-0 border text-xs p-2 rounded w-62.5 shadow-2xl z-10">
                                     This order will not open a new position regardless of size. It will only
                                     reduce the existing position at the time of execution.
                                 </span>}
@@ -78,13 +78,13 @@ export const Checkboxes = (props: CheckboxProps) => {
                                     type="checkbox"
                                     checked={props.twap}
                                     onChange={(e) => props.setTwap(e.target.checked)}
-                                    className="accent-[#2BC287]"
+                                    className="accent-[#2BB94D]"
                                 />
                                 Randomize
                             </label>
 
                             {props.hover == 'randomize' &&
-                                <span className="transition absolute left-0 bottom-5 bg-[#27272A] text-white text-xs p-2 rounded w-62.5 shadow-2xl z-10">
+                                <span className="transition absolute left-0 bottom-5 dark:bg-[#1e2441fd] bg-white border-black/12 dark:border-0 border text-xs p-2 rounded w-62.5 shadow-2xl z-10">
                                     If enabled, each TWAP sub-trade size is automatically adjusted within a
                                     certain range, typically up to ±20%. Other constraints, such as max
                                     single-trade size, will still be honored.
@@ -97,7 +97,7 @@ export const Checkboxes = (props: CheckboxProps) => {
                 {(props.proSelection.toLowerCase() === "scale" || props.activeTab === "limit") && (
                     <label className="flex items-center gap-1">
                         TIF
-                        <select name="" id="" className="bg-[#27272A] ml-2 px-2 py-1 text-sm" value={props.tif} onChange={(e) => { props.setTIF(e.target.value) }}>
+                        <select name="" id="" className="dark:bg-[#1e2441ab] bg-black/12 rounded-md ml-2 px-2 py-1 text-sm" value={props.tif} onChange={(e) => { props.setTIF(e.target.value) }}>
                             <option value="GTC">GTC</option>
                             <option value="IOC">IOC</option>
                             <option value="ALO">ALO</option>

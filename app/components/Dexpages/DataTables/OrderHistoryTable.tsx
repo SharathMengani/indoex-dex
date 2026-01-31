@@ -12,19 +12,19 @@ export const OrderHistoryTable = ({ history, symbolmapping }: { history: any[], 
             <TableWrapper>
                 <thead>
                     <tr className="sticky top-0">
-                        <th className="px-4 py-3 bg-black">Order ID</th>
-                        <th className="px-4 py-3 bg-black">Time</th>
-                        <th className="px-4 py-3 bg-black">Type</th>
-                        <th className="px-4 py-3 bg-black">Coin</th>
-                        <th className="px-4 py-3 bg-black">Direction</th>
-                        <th className="px-4 py-3 bg-black">Size</th>
-                        <th className="px-4 py-3 bg-black">Filled Size</th>
-                        <th className="px-4 py-3 bg-black">Order Value</th>
-                        <th className="px-4 py-3 bg-black">Price</th>
-                        <th className="px-4 py-3 bg-black">Reduce Only</th>
-                        <th className="px-4 py-3 bg-black">Trigger Condition</th>
-                        <th className="px-4 py-3 bg-black">TP/SL</th>
-                        <th className="px-4 py-3 bg-black">Status</th>
+                        <th className="px-4 py-3">Order ID</th>
+                        <th className="px-4 py-3">Time</th>
+                        <th className="px-4 py-3">Type</th>
+                        <th className="px-4 py-3">Coin</th>
+                        <th className="px-4 py-3">Direction</th>
+                        <th className="px-4 py-3">Size</th>
+                        <th className="px-4 py-3">Filled Size</th>
+                        <th className="px-4 py-3">Order Value</th>
+                        <th className="px-4 py-3">Price</th>
+                        <th className="px-4 py-3">Reduce Only</th>
+                        <th className="px-4 py-3">Trigger Condition</th>
+                        <th className="px-4 py-3">TP/SL</th>
+                        <th className="px-4 py-3">Status</th>
                     </tr>
                 </thead>
 
@@ -53,7 +53,7 @@ export const OrderHistoryTable = ({ history, symbolmapping }: { history: any[], 
 
                                     {/* Direction */}
                                     <td
-                                        className={`px-4 py-3 ${order.side === "B" ? "text-[#2BC287]" : "text-[#F74B60]"
+                                        className={`px-4 py-3 ${order.side === "B" ? "text-[#2BB94D]" : "text-[#e90c27]"
                                             }`}
                                     >
                                         {order.side === "B" ? "Long" : "Short"}

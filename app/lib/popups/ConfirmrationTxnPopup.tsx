@@ -52,7 +52,7 @@ const ConfirmationTxnPopup = ({ spotMode, isOpen, onConfirm, onCancel, payload, 
                         <div className="flex justify-between text-sm">
                             <span className="text-gray-400">Side</span>
                             <span
-                                className={`font-medium ${payload.side.toLowerCase() === "buy" ? "text-[#2BC287]" : "text-[#F74B60]"}`}
+                                className={`font-medium ${payload.side.toLowerCase() === "buy" ? "text-[#2BB94D]" : "text-[#e90c27]"}`}
                             >
                                 {payload.side}
                             </span>
@@ -124,7 +124,7 @@ const ConfirmationTxnPopup = ({ spotMode, isOpen, onConfirm, onCancel, payload, 
                         {payload?.reduceOnly &&
                             <div className="flex justify-between text-sm">
                                 <span className="text-gray-400">Reduce Only</span>
-                                <span className={`${payload?.reduceOnly ? "text-[#2BC287]" : "text-[#F74B60]"} font-medium`}>{payload?.reduceOnly ? 'True' : 'False'}</span>
+                                <span className={`${payload?.reduceOnly ? "text-[#2BB94D]" : "text-[#e90c27]"} font-medium`}>{payload?.reduceOnly ? 'True' : 'False'}</span>
                             </div>
                         }
                         <p className="text-gray-400 mt-5">You pay no gas. The order will be confirmed within a few seconds.</p>
@@ -135,8 +135,8 @@ const ConfirmationTxnPopup = ({ spotMode, isOpen, onConfirm, onCancel, payload, 
                         <button
                             onClick={handleConfirm} disabled={isLoading}
                             className={`flex-1 rounded-lg py-2 text-sm font-medium ${payload.side.toLowerCase() === "buy"
-                                ? "bg-[#2BC287]"
-                                : "bg-[#F74B60]"
+                                ? "bg-[#2BB94D]"
+                                : "bg-[#e90c27]"
                                 }`}
                         >
                             {isLoading ? 'Loading...' : `${payload.side.toLowerCase() === "buy" ? `${spotMode != 'spot' ? 'Buy/Long' : 'Buy'}` : `${spotMode != 'spot' ? 'Sell/Short' : 'Sell'}`}`}

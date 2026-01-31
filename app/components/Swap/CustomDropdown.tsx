@@ -103,7 +103,7 @@ export const CustomDropdown: React.FC<Props> = ({
           value={search}
           onChange={e => setSearch(e.target.value)}
           placeholder="Search token..."
-          className="w-full mb-4 px-3 py-2.5 focus:ring-0 focus:outline-0 rounded-lg bg-[#232323] text-white"
+          className="w-full mb-4 px-3 py-2.5 focus:ring-0 focus:outline-0 rounded-lg dark:bg-[#232323] bg-black/12 text-white"
         />
 
         {/* 🌐 Network Filter */}
@@ -122,7 +122,7 @@ export const CustomDropdown: React.FC<Props> = ({
             return (
               <div
                 key={`${id}-${token.address}`} // you had {id} object inside string
-                className={`px-3 py-2 flex justify-between items-center hover:bg-[#232323] rounded-lg cursor-pointer 
+                className={`px-3 py-2 flex justify-between items-center hover:dark:bg-[#232323] bg-black/12 rounded-lg cursor-pointer 
                 ${(isFrom || isTo) ? "hidden" : ""}
                 `}
                 onClick={() => {
@@ -180,7 +180,7 @@ export const NetworkDropdown = ({ chains, activeNetwork, setActiveNetwork }: any
       {/* Trigger */}
       <button
         onClick={() => setOpen(prev => !prev)}
-        className="w-full flex items-center justify-between px-4 py-2 rounded-lg bg-[#232323] text-white min-h-12"
+        className="w-full flex items-center justify-between px-4 py-2 rounded-lg dark:bg-[#232323] bg-black/12 text-white min-h-12"
       >
         <div className="flex items-center gap-2">
           {selectedChain != 'All Chains' && <img src={selectedChain?.logoURI} alt={selectedChain?.name} className="w-8 rounded-full" />}
@@ -192,7 +192,7 @@ export const NetworkDropdown = ({ chains, activeNetwork, setActiveNetwork }: any
 
       {/* Dropdown */}
       {open && (
-        <ul className="absolute z-50 mt-2 w-full rounded-lg bg-[#232323] shadow-lg max-h-64 py-2 overflow-auto">
+        <ul className="absolute z-50 mt-2 w-full rounded-lg dark:bg-[#232323] bg-black/12 shadow-lg max-h-64 py-2 overflow-auto">
           {/* All */}
           <li
             className={`px-4 py-2 flex items-center gap-2 cursor-pointer hover:bg-zinc-800 ${activeNetwork === null && "text-emerald-400"

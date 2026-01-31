@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { widget } from "../../../public/static/charting_library"; // Adjust path
 import { SimpleDatafeed } from "./SampleDataFeed";
 import { AbcDexLoader } from "./OrderBook";
+import { useTheme } from "next-themes";
 
 
 interface TradingChartProps {
@@ -13,8 +14,28 @@ export default function TradingChart({ pair }: TradingChartProps) {
     const chartContainerRef = useRef<HTMLDivElement>(null);
     const [isLoading, setIsLoading] = useState(true);
     const tvWidgetRef = useRef<any>(null);
+    const { resolvedTheme, theme } = useTheme();
+    const [themeReady, setThemeReady] = useState(false);
+
+    useEffect(() => {
+        if (resolvedTheme) setThemeReady(true);
+    }, [resolvedTheme]);
 
     // Initialize TradingView widget once per pair
+    useEffect(() => {
+        if (!tvWidgetRef.current) return;
+
+        const mode = resolvedTheme === "dark" ? "dark" : "light";
+        const toolbarColor = mode === "dark" ? "#0f172a" : "#ffffff";
+
+        tvWidgetRef.current.changeTheme(mode === "dark" ? "Dark" : "Light");
+        tvWidgetRef.current.applyOverrides(getChartOverrides(mode));
+        tvWidgetRef.current.applyOverrides({
+            "paneProperties.background": toolbarColor,
+            "scalesProperties.backgroundColor": toolbarColor,
+        });
+    }, [resolvedTheme]);
+
     useEffect(() => {
         if (!chartContainerRef.current) return;
         setIsLoading(true);
@@ -29,8 +50,8 @@ export default function TradingChart({ pair }: TradingChartProps) {
         const [fsym, tsym] = pair.split("_");
         const datafeed = new SimpleDatafeed({ fsym, tsym });
 
-        const toolbarColor = "#000";
-
+        const toolbarColor = resolvedTheme === "dark" ? "#0f172a" : "#ffffff";
+        const theme = resolvedTheme === "dark" ? "dark" : "light";
         const widgetOptions: any = {
             symbol: pair,
             datafeed,
@@ -40,8 +61,8 @@ export default function TradingChart({ pair }: TradingChartProps) {
             interval: "5",
             fullscreen: false,
             autosize: true,
-            theme: "Dark",
             toolbar_bg: toolbarColor,
+            theme: resolvedTheme === "dark" ? "Dark" : "Light",
             disabled_features: [
                 "use_localstorage_for_settings",
                 "snapshot_trading_drawings",
@@ -71,33 +92,7 @@ export default function TradingChart({ pair }: TradingChartProps) {
                 backgroundColor: toolbarColor,
                 foregroundColor: toolbarColor,
             },
-            overrides: {
-                "paneProperties.background": toolbarColor,
-                "paneProperties.backgroundType": "solid",
-                "paneProperties.vertGridProperties.color": "#1e2329",
-                "paneProperties.horzGridProperties.color": "#1e2329",
-                "scalesProperties.backgroundColor": toolbarColor,
-                "scalesProperties.lineColor": "#2b3139",
-                "scalesProperties.textColor": "#fff", // text green
-                "mainSeriesProperties.candleStyle.upColor": "#2bc287",
-                "mainSeriesProperties.candleStyle.downColor": "#f74b60",
-                "mainSeriesProperties.candleStyle.drawWick": true,
-                "mainSeriesProperties.candleStyle.drawBorder": true,
-                "mainSeriesProperties.candleStyle.borderUpColor": "#2bc287",
-                "mainSeriesProperties.candleStyle.borderDownColor": "#f74b60",
-                "mainSeriesProperties.candleStyle.wickUpColor": "#2bc287",
-                "mainSeriesProperties.candleStyle.wickDownColor": "#f74b60",
-                "mainSeriesProperties.areaStyle.color1": "#16a34a33",
-                "mainSeriesProperties.areaStyle.color2": "#16a34a00",
-                "mainSeriesProperties.areaStyle.linecolor": "#16a34a",
-                "mainSeriesProperties.areaStyle.linewidth": 2,
-                "mainSeriesProperties.lineStyle.color": "#2bc287",
-                "mainSeriesProperties.lineStyle.linewidth": 2,
-                "mainSeriesProperties.statusViewStyle.symbolTextSource": "ticker",
-                volumePaneSize: "medium",
-                "paneProperties.topMargin": 10,
-                "paneProperties.bottomMargin": 10,
-            },
+            overrides: getChartOverrides(theme)
         };
 
         const tvWidget = new widget(widgetOptions);
@@ -116,7 +111,7 @@ export default function TradingChart({ pair }: TradingChartProps) {
             } catch (e) { }
             tvWidgetRef.current = null;
         };
-    }, [pair]);
+    }, [pair, resolvedTheme]);
 
 
     return (
@@ -128,7 +123,7 @@ export default function TradingChart({ pair }: TradingChartProps) {
             />
             {isLoading && (
                 <div className="absolute inset-0 z-20 flex items-center justify-center
-        bg-black/60 backdrop-blur-sm animate-fadeOut">
+        bg-white/60 dark:bg-[#1e2441ab]/50 backdrop-blur-sm animate-fadeOut">
                     <AbcDexLoader />
                 </div>
             )}
@@ -146,3 +141,75 @@ export const timeframes = [
     { label: "4h", value: "240" },
     { label: "1D", value: "D" },
 ];
+
+const chartTheme = {
+    dark: {
+        background: "#0f172a",          // slate-900
+        grid: "#1e293b",                // slate-800
+        scaleLine: "#2b3139",
+        text: "#ffffff",
+
+        up: "#2BB94D",
+        down: "#e90c27",
+
+        area1: "#16a34a33",
+        area2: "#16a34a00",
+        areaLine: "#16a34a",
+    },
+
+    light: {
+        background: "#ffffff",
+        grid: "#e5e7eb",                // gray-200
+        scaleLine: "#d1d5db",           // gray-300
+        text: "#111827",                // gray-900
+
+        up: "#16a34a",
+        down: "#dc2626",
+
+        area1: "#16a34a22",
+        area2: "#16a34a00",
+        areaLine: "#16a34a",
+    },
+};
+
+
+export const getChartOverrides = (mode: "dark" | "light") => {
+    const c = chartTheme[mode];
+
+    return {
+        "paneProperties.background": c.background,
+        "paneProperties.backgroundType": "solid",
+        "paneProperties.vertGridProperties.color": c.grid,
+        "paneProperties.horzGridProperties.color": c.grid,
+
+        "scalesProperties.backgroundColor": c.background,
+        "scalesProperties.lineColor": c.scaleLine,
+        "scalesProperties.textColor": c.text,
+
+        // Candles
+        "mainSeriesProperties.candleStyle.upColor": c.up,
+        "mainSeriesProperties.candleStyle.downColor": c.down,
+        "mainSeriesProperties.candleStyle.drawWick": true,
+        "mainSeriesProperties.candleStyle.drawBorder": true,
+        "mainSeriesProperties.candleStyle.borderUpColor": c.up,
+        "mainSeriesProperties.candleStyle.borderDownColor": c.down,
+        "mainSeriesProperties.candleStyle.wickUpColor": c.up,
+        "mainSeriesProperties.candleStyle.wickDownColor": c.down,
+
+        // Area
+        "mainSeriesProperties.areaStyle.color1": c.area1,
+        "mainSeriesProperties.areaStyle.color2": c.area2,
+        "mainSeriesProperties.areaStyle.linecolor": c.areaLine,
+        "mainSeriesProperties.areaStyle.linewidth": 2,
+
+        // Line
+        "mainSeriesProperties.lineStyle.color": c.up,
+        "mainSeriesProperties.lineStyle.linewidth": 2,
+
+        "mainSeriesProperties.statusViewStyle.symbolTextSource": "ticker",
+
+        volumePaneSize: "medium",
+        "paneProperties.topMargin": 10,
+        "paneProperties.bottomMargin": 10,
+    };
+};

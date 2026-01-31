@@ -121,7 +121,7 @@ export function TpSlInputs({
                 <input {...numberOnly}
                     type="text"
                     placeholder="TP Price"
-                    className="w-full bg-[#27272A] px-3 py-2 rounded-lg text-sm focus:outline-0"
+                    className="w-full dark:bg-[#1e2441ab] bg-white border-black/12 dark:border-0 border px-3 py-2 rounded-lg text-sm focus:outline-0"
                     value={tpPrice}
                     onChange={(e) => { onTpPriceChange(e.target.value); setTouched((p: any) => ({ ...p, tpPrice: true })) }}
                     onBlur={() =>
@@ -132,7 +132,7 @@ export function TpSlInputs({
                 <input {...numberOnly}
                     type="text"
                     placeholder="Gain %"
-                    className="w-full bg-[#27272A] px-3 py-2 rounded-lg text-sm focus:outline-0"
+                    className="w-full dark:bg-[#1e2441ab] bg-white border-black/12 dark:border-0 border px-3 py-2 rounded-lg text-sm focus:outline-0"
                     value={tpGain}
                     onChange={(e) => { onTpGainChange(e.target.value); setTouched((p) => ({ ...p, tpGain: true })) }}
                     onBlur={() => { setTouched((p) => ({ ...p, tpGain: true })) }}
@@ -150,7 +150,7 @@ export function TpSlInputs({
                 <input {...numberOnly}
                     type="text"
                     placeholder="SL Price"
-                    className="w-full bg-[#27272A] px-3 py-2 rounded-lg text-sm focus:outline-0"
+                    className="w-full dark:bg-[#1e2441ab] bg-white border-black/12 dark:border-0 border px-3 py-2 rounded-lg text-sm focus:outline-0"
                     value={slPrice}
                     onChange={(e) => { onSlPriceChange(e.target.value); setTouched((p) => ({ ...p, slPrice: true })) }}
                     onBlur={() => { setTouched((p) => ({ ...p, slPrice: true })) }}
@@ -158,7 +158,7 @@ export function TpSlInputs({
                 <input {...numberOnly}
                     type="text"
                     placeholder="Loss %"
-                    className="w-full bg-[#27272A] px-3 py-2 rounded-lg text-sm focus:outline-0"
+                    className="w-full dark:bg-[#1e2441ab] bg-white border-black/12 dark:border-0 border px-3 py-2 rounded-lg text-sm focus:outline-0"
                     value={slLoss}
                     onChange={(e) => { onSlLossChange(e.target.value); setTouched((p) => ({ ...p, slLoss: true })) }}
                     onBlur={() => { setTouched((p) => ({ ...p, slLoss: true })) }}

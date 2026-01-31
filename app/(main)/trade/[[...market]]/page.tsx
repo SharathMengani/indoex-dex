@@ -76,7 +76,7 @@ const Trade = () => {
                         {/* LEFT SIDE */}
                         <div className='overflow-x-auto'>
                             <div className="grid grid-cols-1 2xl:grid-cols-[1fr_320px] gap-3">
-                                <div className="flex-1 flex flex-col border border-[#232332]">
+                                <div className="flex-1 flex flex-col border dark:border-[#232323] border-black/12">
                                     <DexHeader perpinfo={trading.perpinfo} spotMode={trading.spotMode}
                                         spotinfo={trading.spotinfo}
                                         selectedCoin={trading.selectedCoin}
@@ -88,7 +88,7 @@ const Trade = () => {
                                     />
                                     <TradingChart pair={trading.pairmappingid ? trading.pairmappingid : trading.selectedCoin} />
                                 </div>
-                                <div className='2xl:block hidden  border border-[#232332]'>
+                                <div className='2xl:block hidden  border dark:border-[#232323] border-black/12'>
                                     <TradingForm options={trading.options} spotMode={trading.spotMode} address={trading.address ?? ''} updateTradeMode={trading.handleUpdateTradeMode} perpinfo={trading.perpinfo}
                                         inputCurrency={trading.inputCurrency} setInputCurrency={trading.setInputCurrency}
                                         tradeMode={trading.tradeMode} setTradeMode={trading.setTradeMode} isLoading={trading.isLoading}
@@ -141,7 +141,7 @@ const Trade = () => {
                         <div className="space-y-4">
 
 
-                            <div className='2xl:hidden block   border border-[#232332]'>
+                            <div className='2xl:hidden block   border dark:border-[#232323] border-black/12'>
                                 <TradingForm options={trading.options} spotMode={trading.spotMode} address={trading.address ?? ''} updateTradeMode={trading.handleUpdateTradeMode} perpinfo={trading.perpinfo}
                                     inputCurrency={trading.inputCurrency} setInputCurrency={trading.setInputCurrency}
                                     tradeMode={trading.tradeMode} setTradeMode={trading.setTradeMode} isLoading={trading.isLoading}
@@ -169,29 +169,29 @@ const Trade = () => {
                                     }}
                                 />
                             </div>
-                            <div className="border border-[#2A2A32]">
-                                <ul className="relative flex items-center justify-between border-b border-[#2A2A32] text-[14px] w-full">
+                            <div className="border dark:border-[#232323] border-black/12">
+                                <ul className="relative flex items-center justify-between border-b dark:border-[#232323] border-black/12 text-[14px] w-full">
                                     <li
                                         onClick={() => trading.setIsActive("orderbook")}
-                                        className={`relative py-2.5 px-6 cursor-pointer text-white/75 transition-colors duration-300 ease-in-out w-full text-center
-                                     ${trading.isActive === "orderbook" ? "text-white" : ""}`}
+                                        className={`relative py-2.5 px-6 cursor-pointer dark:text-white/75 transition-colors duration-300 ease-in-out w-full text-center
+                                     ${trading.isActive === "orderbook" ? "dark:text-white" : ""}`}
                                     >
                                         Order Book
                                         {/* Sliding underline */}
                                         <span
-                                            className={`absolute bottom-0 left-0 h-px bg-white transition-all duration-300 ease-in-out
+                                            className={`absolute bottom-0 left-0 h-px dark:bg-white bg-[#232323] transition-all duration-300 ease-in-out
                                        ${trading.isActive === "orderbook" ? "w-full" : "w-0"}`}
                                         />
                                     </li>
 
                                     <li
                                         onClick={() => trading.setIsActive("trades")}
-                                        className={`relative py-2.5 px-6 cursor-pointer text-white/75 transition-colors duration-300 ease-in-out  w-full text-center
-                                     ${trading.isActive === "trades" ? "text-white" : ""}`}
+                                        className={`relative py-2.5 px-6 cursor-pointer dark:text-white/75 transition-colors duration-300 ease-in-out  w-full text-center
+                                     ${trading.isActive === "trades" ? "dark:text-white" : ""}`}
                                     >
                                         Trades
                                         <span
-                                            className={`absolute bottom-0 left-0 h-px bg-white transition-all duration-300 ease-in-out
+                                            className={`absolute bottom-0 left-0 h-px dark:bg-white bg-[#232323] transition-all duration-300 ease-in-out
                                        ${trading.isActive === "trades" ? "w-full" : "w-0"}`}
                                         />
                                     </li>
@@ -228,12 +228,12 @@ const Trade = () => {
                     </div>
                 </div>
                 <div className="lg:hidden block w-full text-white">
-                    <div className="flex justify-around bg-[#141414] border-t border-[#2A2A32] text-sm fixed bottom-0 left-0 w-full z-50">
+                    <div className="flex justify-around bg-[#141414] border-t dark:border-[#232323] border-black/12 text-sm fixed bottom-0 left-0 w-full z-50">
                         {tabs.map(tab => (
                             <button
                                 key={tab.tab}
                                 onClick={() => trading.setMainTab(tab.tab)}
-                                className={`py-5 w-full flex items-center gap-1 justify-center capitalize cursor-pointer font-semibold ${trading.mainTab === tab.tab ? "text-[#2BC287] " : "text-white/75"
+                                className={`py-5 w-full flex items-center gap-1 justify-center capitalize cursor-pointer font-semibold ${trading.mainTab === tab.tab ? "text-[#2BB94D] " : "dark:text-white/75"
                                     }`}
                             >
                                 {tab.tab} {tab.icon}
@@ -251,7 +251,7 @@ const Trade = () => {
                                 marketData={trading.marketData}
                                 priceChange={Number(trading.marketData.change24h) || 0}
                             />
-                            <div className="flex justify-around border-b border-[#2A2A32] text-md mb-3">
+                            <div className="flex justify-around border-b dark:border-[#232323] border-black/12 text-md mb-3">
                                 {["chart", "orderbook", "trades"].map(tab => (
                                     <button
                                         key={tab}

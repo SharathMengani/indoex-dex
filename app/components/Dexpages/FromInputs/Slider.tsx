@@ -57,26 +57,26 @@ export function Slider({ value, onChange }: SliderProps) {
     return (
         <div className="w-full select-none">
             {/* Value */}
-            <div className="mb-1 text-xs text-end text-gray-400">
+            <div className="mb-1 text-xs text-end dark:text-gray-400">
                 {clampedValue}%
             </div>
 
             {/* Track */}
             <div
                 ref={trackRef}
-                className="relative h-2 rounded-full bg-[#2b2b2b] cursor-pointer touch-none"
+                className="relative h-2 rounded-full bg-[#1e2441ab]/12 dark:bg-[#1e2441ab] cursor-pointer touch-none"
                 onPointerDown={onPointerDown}
             >
                 {/* Fill */}
                 <div
-                    className={`absolute h-full bg-white rounded-full ${transitionClass}`}
+                    className={`absolute h-full dark:bg-white bg-black/18 rounded-full ${transitionClass}`}
                     style={{ width: `${clampedValue}%` }}
                 />
 
                 {/* Thumb */}
                 <div
-                    className="absolute top-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-[#2bc287a1] shadow cursor-pointer flex items-center justify-center
-               hover:scale-112 active:scale-112 active:shadow-[0_0_1px_1px_#2BC287] hover:shadow-[0_0_1px_1px_#2BC287] focus:ring-8 focus:ring-blue-500 transition"
+                    className="absolute top-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-[#2BB94Da1] shadow cursor-pointer flex items-center justify-center
+               hover:scale-112 active:scale-112 active:shadow-[0_0_1px_1px_#2BB94D] hover:shadow-[0_0_1px_1px_#2BB94D] focus:ring-8 focus:ring-blue-500 transition"
                     style={{
                         left: `min(100%, max(0%, ${clampedValue - 5}%))`
                     }}
@@ -93,7 +93,7 @@ export function Slider({ value, onChange }: SliderProps) {
                     <li
                         key={p}
                         onClick={() => onChange(p)}
-                        className={`cursor-pointer ${clampedValue >= p ? "text-white" : "text-gray-400"
+                        className={`cursor-pointer ${clampedValue >= p ? "dark:text-white" : "text-gray-400"
                             }`}
                     >
                         {p}%

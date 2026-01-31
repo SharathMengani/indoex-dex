@@ -60,7 +60,7 @@ const LeveragePopup = ({
                     max={leverageCoin?.maxLeverage}
                     onChange={handleChange}
                 />
-                <div className="border border-[#37373c] py-1.5 rounded text-center">
+                <div className="border dark:border-[#232323] border-black/12 py-1.5 rounded text-center">
                     {localLeverage}x
                 </div>
             </div>
@@ -72,7 +72,7 @@ const LeveragePopup = ({
                 Confirm
             </button>
 
-            <div className="border text-[12px] border-[#F74B60] text-[#F74B60] px-4 py-2 rounded mt-5 text-center">
+            <div className="border text-[12px] border-[#e90c27] text-[#e90c27] px-4 py-2 rounded mt-5 text-center">
                 Note that setting a higher leverage increases the risk of liquidation.
             </div>
         </Modal>

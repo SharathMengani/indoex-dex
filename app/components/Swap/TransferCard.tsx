@@ -18,7 +18,7 @@ function TransferCard({ transfer, chains }: { transfer: Transfer, chains: Chains
     const formattedToAmount = Number(transfer.receiving.amount) / Math.pow(10, transfer.receiving.token.decimals);
 
     return (
-        <div className="border-2 border-[#2a2a32] rounded-lg px-5 py-4 gap-2]">
+        <div className="border-2 dark:border-[#232323] border-black/12 rounded-lg px-5 py-4 gap-2]">
             <ul className="flex items-center justify-between gap-2 text-xs">
                 <li>{getDate(transfer.sending.timestamp)?.date}</li>
                 <li>{getDate(transfer.sending.timestamp)?.time}</li>

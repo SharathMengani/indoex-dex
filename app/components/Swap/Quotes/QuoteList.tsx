@@ -71,7 +71,7 @@ export default function QuoteList({ data, handleSubmit, isQuotes, handleRoutes, 
         return aPriority - bPriority;
     });
     return (
-        <div className="space-y-3 max-w-115 w-full border-2 border-[#2a2a32] rounded-lg px-5 py-4">
+        <div className="space-y-3 max-w-115 w-full border-2 dark:border-[#232323] border-black/12 rounded-lg px-5 py-4">
             <div className="flex items-center gap-2 justify-between"><span>Receive</span>
                 <button onClick={() => handleRoutes()}><CircleTimer /></button> </div>
             {routes ?
@@ -105,7 +105,7 @@ export default function QuoteList({ data, handleSubmit, isQuotes, handleRoutes, 
                                 className={`rounded-xl p-4 cursor-pointer transition max-w-108 mx-auto relative overflow-hidden ${selectedRoute == route.id ? 'border-2 border-emerald-400' : 'border-2 border-transparent'}
               ${route.tag === "Best Return"
                                         ? "bg-white/90 text-black "
-                                        : "bg-[#232323] text-white "
+                                        : "dark:bg-[#232323] bg-black/12 text-white "
                                     }`}
                             >
                                 {/* {selectedRoute == route.id && <span className="absolute bottom-0 right-0 rounded-md w-full h-2 bg-emerald-500 "></span>} */}

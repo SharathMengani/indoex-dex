@@ -9,12 +9,12 @@ type Trade = {
     time: number | string;
 };
 
-export const RecentTrades = ({ trades, market }: { trades: Trade[] ,market:string }) => {
+export const RecentTrades = ({ trades, market }: { trades: Trade[], market: string }) => {
     return (
         <div className=" flex flex-col">
             <div className="flex-1 overflow-hidden text-xs ">
                 {/* HEADER */}
-                <div className="grid grid-cols-3 text-white/75 px-3 py-1.5 sticky top-0 border-b border-[#2A2A32]">
+                <div className="grid grid-cols-3 dark:text-white/75 text:black/75 px-3 py-1.5 sticky top-0 border-b dark:border-[#232323] border-black/12">
                     <span>Price(USD)</span>
                     <span className="text-right">Size({market})</span>
                     <span className="text-right">Time</span>
@@ -24,13 +24,13 @@ export const RecentTrades = ({ trades, market }: { trades: Trade[] ,market:strin
                     {trades?.map((t, i) => (
                         <div
                             key={i}
-                            className="grid grid-cols-3 px-3 py-0.5 hover:bg-[#161616] h-6.75 leading-6.75"
+                            className="grid grid-cols-3 px-3 py-0.5 hover:dark:bg-[#161616] hover:bg-[#f3f3f3] h-6.75 leading-6.75"
                         >
                             <span
                                 className={
                                     t.side === "B"
-                                        ? "text-[#2BC287]"
-                                        : "text-[#F74B60]"
+                                        ? "text-[#2BB94D]"
+                                        : "text-[#e90c27]"
                                 }
                             >
                                 {formatPrice(t.price)}

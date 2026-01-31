@@ -13,11 +13,11 @@ export const BalancesTable = ({ balances, positions, perpsEquity, mids }: { bala
             <TableWrapper>
                 <thead>
                     <tr className="sticky top-0">
-                        <th className="px-4 py-3 bg-black">Asset</th>
-                        <th className="px-4 py-3 bg-black">Total Balance</th>
-                        <th className="px-4 py-3 bg-black">Available</th>
-                        <th className="px-4 py-3 bg-black">In Orders</th>
-                        <th className="px-4 py-3 bg-black">Value (USD)</th>
+                        <th className="px-4 py-3">Asset</th>
+                        <th className="px-4 py-3">Total Balance</th>
+                        <th className="px-4 py-3">Available</th>
+                        <th className="px-4 py-3">In Orders</th>
+                        <th className="px-4 py-3">Value (USD)</th>
                     </tr>
                 </thead>
                 <tbody>

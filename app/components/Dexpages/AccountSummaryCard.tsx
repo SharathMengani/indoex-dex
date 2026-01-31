@@ -35,7 +35,7 @@ export const AccountSummaryCard = ({ props, userPositions, spotMode }: { props: 
   const tabs: TabType[] = ["deposit", "withdraw", "transfer"];
 
   return (
-    <div className=" text-white p-4 space-y-5 border border-[#232332] h-134">
+    <div className=" dark:text-white p-4 space-y-5 border dark:border-[#232323] border-black/12 h-134">
 
       {/* Tabs */}
       <div className="flex items-center justify-between">
@@ -53,7 +53,7 @@ export const AccountSummaryCard = ({ props, userPositions, spotMode }: { props: 
               }
             }}
             className={`cursor-pointer px-4 py-1 rounded-lg text-sm capitalize
-              ${tab === t ? "border border-[#2A2A32]" : "border border-[#2A2A32]"}`}
+              ${tab === t ? "border dark:border-[#232323] border-black/12" : "border dark:border-[#232323] border-black/12"}`}
           >
             {t}
           </button>
@@ -88,7 +88,7 @@ export function Row({ label, value, valueClass, hiddenClass }: RowProps) {
   return (
     <div className={`flex items-center justify-between text-[13px] text-[#a5a5a8] ${hiddenClass}`}>
       <span>{label}</span>
-      <span className={valueClass ? valueClass : "text-white/75"}>{value}</span>
+      <span className={valueClass ? valueClass : "dark:text-white/75"}>{value}</span>
     </div>
   );
 }

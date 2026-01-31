@@ -10,7 +10,7 @@ export default function SwapPage() {
     return (
 
 
-        <section className="py-24">
+        <section className="py-24 dark:text-white">
             <div className="site-width-sm">
                 <SwapIntro />
                 <SwapForm />

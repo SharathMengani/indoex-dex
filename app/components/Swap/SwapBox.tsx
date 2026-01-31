@@ -30,7 +30,7 @@ export const SwapAmountBox: React.FC<Props> = ({
 }) => {
   return (
     <div className="mb-4">
-      <div className="border-2 border-[#2a2a32] rounded-lg px-5 py-4">
+      <div className="border-2 dark:border-[#232323] border-black/12 rounded-lg px-5 py-4">
 
         <div className="">
           <div>
