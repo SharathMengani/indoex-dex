@@ -233,7 +233,7 @@ const Trade = () => {
                             <button
                                 key={tab.tab}
                                 onClick={() => trading.setMainTab(tab.tab)}
-                                className={`py-5 w-full flex items-center gap-1 justify-center capitalize cursor-pointer font-semibold ${trading.mainTab === tab.tab ? "text-[#2BC287] " : "dark:text-white/75"
+                                className={`py-5 w-full flex items-center gap-1 justify-center capitalize cursor-pointer font-semibold ${trading.mainTab === tab.tab ? "text-[#2BB94D] " : "dark:text-white/75"
                                     }`}
                             >
                                 {tab.tab} {tab.icon}

@@ -23,7 +23,7 @@ export const TWAPTable = ({ mids, twapStates, userTwapSliceFills, userTwapHistor
                         <button
                             key={t.id}
                             onClick={() => setActive(t)}
-                            className={`flex items-center cursor-pointer py-2 whitespace-nowrap text-sm font-medium transition relative ${isActive ? "text-[#2BC287]" : "opacity-50"}`}
+                            className={`flex items-center cursor-pointer py-2 whitespace-nowrap text-sm font-medium transition relative ${isActive ? "text-[#2BB94D]" : "opacity-50"}`}
                         >
                             <div className="relative pb-2">
                                 {t.name}
@@ -31,7 +31,7 @@ export const TWAPTable = ({ mids, twapStates, userTwapSliceFills, userTwapHistor
                                 {/* underline */}
                                 <div
                                     className={`h-0.5 w-6 absolute bottom-0 left-1/2 -translate-x-1/2 origin-center transition-all duration-300
-                ${isActive ? "bg-[#2BC287] scale-x-100" : "bg-white/0 scale-x-0"}
+                ${isActive ? "bg-[#2BB94D] scale-x-100" : "bg-white/0 scale-x-0"}
             `}
                                 ></div>
                             </div>
@@ -39,7 +39,7 @@ export const TWAPTable = ({ mids, twapStates, userTwapSliceFills, userTwapHistor
                             {t.count > 0 && (
                                 <span
                                     className={`ml-2 rounded-full relative -top-1 px-2 py-0.5 text-[11px] font-semibold
-                ${isActive ? "bg-[#2BC287] text-black" : "bg-white/80 text-black"}
+                ${isActive ? "bg-[#2BB94D] text-black" : "bg-white/80 text-black"}
             `}
                                 >
                                     {t.count}
@@ -119,17 +119,17 @@ const ActiveTable = ({ twapStates, cancelTwapOrder, mids, symbolmapping }: { twa
                                     </td>
 
                                     {/* Coin */}
-                                    <td className={`px-4 py-3 ${t.side === "B" ? "text-[#2BC287]" : "text-[#F74B60]"}`}>
+                                    <td className={`px-4 py-3 ${t.side === "B" ? "text-[#2BB94D]" : "text-[#e90c27]"}`}>
                                         {symbolmapping[t.coin.replace('@', '')] || t.coin}
                                     </td>
 
                                     {/* Size */}
-                                    <td className={`px-4 py-3 ${t.side === "B" ? "text-[#2BC287]" : "text-[#F74B60]"}`}>
+                                    <td className={`px-4 py-3 ${t.side === "B" ? "text-[#2BB94D]" : "text-[#e90c27]"}`}>
                                         {t.sz}
                                     </td>
 
                                     {/* Executed Size */}
-                                    <td className={`px-4 py-3 ${t.side === "B" ? "text-[#2BC287]" : "text-[#F74B60]"}`}>
+                                    <td className={`px-4 py-3 ${t.side === "B" ? "text-[#2BB94D]" : "text-[#e90c27]"}`}>
                                         {t.executedSz} {t.coin}
                                     </td>
 
@@ -152,7 +152,7 @@ const ActiveTable = ({ twapStates, cancelTwapOrder, mids, symbolmapping }: { twa
                                     <td className="px-4 py-3">
                                         <button
                                             onClick={() => cancelTwapOrder({ coinName: t.coin, orderId: id })}
-                                            className="text-[#F74B60] hover:text-red-300"
+                                            className="text-[#e90c27] hover:text-red-300"
                                         >
                                             Terminate
                                         </button></td>
@@ -205,13 +205,13 @@ const HistoryTable = ({ userTwapHistory, symbolmapping }: { userTwapHistory: any
                                         <div>{getFormattedDateTime(t.state.timestamp).date}</div>
                                         <div className="text-[12px]">{getFormattedDateTime(t.state.timestamp).timeAMPM}</div>
                                     </td>
-                                    <td className={`px-4 py-3 ${t.state.side === "B" ? "text-[#2BC287]" : "text-[#F74B60]"}`}>
+                                    <td className={`px-4 py-3 ${t.state.side === "B" ? "text-[#2BB94D]" : "text-[#e90c27]"}`}>
                                         {symbolmapping[t.state.coin.replace('@', '')] || t.state.coin}
                                     </td>
-                                    <td className={`px-4 py-3 ${t.state.side === "B" ? "text-[#2BC287]" : "text-[#F74B60]"}`}>
+                                    <td className={`px-4 py-3 ${t.state.side === "B" ? "text-[#2BB94D]" : "text-[#e90c27]"}`}>
                                         {getNumberTransformed( Number(t.state.executedSz) + Number(t.state.sz))} {t.state.coin}
                                     </td>
-                                    <td className={`px-4 py-3 ${t.state.side === "B" ? "text-[#2BC287]" : "text-[#F74B60]"}`}>{t.state.executedSz} {t.state.coin}</td>
+                                    <td className={`px-4 py-3 ${t.state.side === "B" ? "text-[#2BB94D]" : "text-[#e90c27]"}`}>{t.state.executedSz} {t.state.coin}</td>
                                     <td className="px-4 py-3">{t.state.sz}</td>
                                     <td className="px-4 py-3">{t.state.minutes} minutes</td>
                                     <td className="px-4 py-3">{t.state.reduceOnly ? 'Yes' : 'No'}</td>
@@ -260,10 +260,10 @@ const FillHistoryTable = ({ userTwapSliceFills, symbolmapping }: { userTwapSlice
                                         {getFormattedDateTime(t.fill.time).timeAMPM}
                                     </div>
                                 </td>
-                                <td className={`px-4 py-3 ${t.fill.side === "B" ? "text-[#2BC287]" : "text-[#F74B60]"}`}>
+                                <td className={`px-4 py-3 ${t.fill.side === "B" ? "text-[#2BB94D]" : "text-[#e90c27]"}`}>
                                     {symbolmapping[t.fill.coin.replace('@', '')] || t.fill.coin}
                                 </td>
-                                <td className={`px-4 py-3 ${t.fill.side === "B" ? "text-[#2BC287]" : "text-[#F74B60]"}`}>
+                                <td className={`px-4 py-3 ${t.fill.side === "B" ? "text-[#2BB94D]" : "text-[#e90c27]"}`}>
                                     {t.fill.dir}
                                 </td>
                                 <td className="px-4 py-3">{t.fill.px}</td>

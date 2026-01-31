@@ -97,7 +97,7 @@ export const OrderBook = ({
                                         className="absolute right-0 top-0 bottom-0 bg-red-500/15 transition-all"
                                         style={{ width: `${pct}%` }}
                                     />
-                                    <span className="text-[#F74B60] relative z-10">
+                                    <span className="text-[#e90c27] relative z-10">
                                         {a.price}
                                     </span>
                                     <span className="text-right relative z-10">
@@ -151,7 +151,7 @@ export const OrderBook = ({
                                         className="absolute right-0 top-0 bottom-0 bg-emerald-500/15 transition-all"
                                         style={{ width: `${pct}%` }}
                                     />
-                                    <span className="text-[#2BC287] relative z-10">
+                                    <span className="text-[#2BB94D] relative z-10">
                                         {b.price}
                                     </span>
                                     <span className="text-right relative z-10">
@@ -219,8 +219,8 @@ export const OrderBook = ({
                 <div className="py-1 px-3 text-center border-y dark:border-[#232323] border-black/12 space-x-4">
                     <span
                         className={`text-lg font-bold ${marketData.type === "Buy"
-                            ? "text-[#2BC287]"
-                            : "text-[#F74B60]"
+                            ? "text-[#2BB94D]"
+                            : "text-[#e90c27]"
                             }`}
                     >
                         ${marketData.price}
@@ -228,8 +228,8 @@ export const OrderBook = ({
                     <span
                         className={
                             Number(marketData.change24h) > 0
-                                ? "text-[#2BC287]"
-                                : "text-[#F74B60]"
+                                ? "text-[#2BB94D]"
+                                : "text-[#e90c27]"
                         }
                     >
                         {marketData.change24h}%
@@ -243,7 +243,7 @@ export const OrderBook = ({
             {/* Hover Popup (outside overflow) */}
             {hover && agg && (
                 <div
-                    className="absolute z-50 dark:bg-[#1E1E1E] bg-white border dark:border-[#232323] border-black/12 rounded-md px-3 py-2 text-[12px] space-y-1 shadow-lg"
+                    className="absolute z-50 dark:bg-[#1e2441] bg-white border dark:border-[#232323] border-black/12 rounded-md px-3 py-2 text-[12px] space-y-1 shadow-lg"
                     style={popupStyle()}
                 >
                     {/* Arrow */}
@@ -289,7 +289,7 @@ export const AbcDexLoader = () => {
         <div className="h-67.5 flex flex-col items-center justify-center gap-4">
 
             {/* BRAND — wave + glow */}
-            <div className="relative flex gap-0 text-3xl font-bold tracking-0 text-[#2BC287]">
+            <div className="relative flex gap-0 text-3xl font-bold tracking-0 text-[#2BB94D]">
                 {brand.split("").map((char, i) => (
                     <span
                         key={i}
@@ -301,7 +301,7 @@ export const AbcDexLoader = () => {
                 ))}
 
                 {/* glow layer */}
-                <span className="absolute inset-0 blur-lg opacity-40 text-[#2BC287] pointer-events-none">
+                <span className="absolute inset-0 blur-lg opacity-40 text-[#2BB94D] pointer-events-none">
                     ABC DEX
                 </span>
             </div>
@@ -324,10 +324,10 @@ export const AbcDexLoader = () => {
                 {[0, 1, 2].map(i => (
                     <div
                         key={i}
-                        className="relative h-0.5 bg-[#2BC287]/10 overflow-hidden rounded-full"
+                        className="relative h-0.5 bg-[#2BB94D]/10 overflow-hidden rounded-full"
                     >
                         <div
-                            className="absolute h-full w-1/3 bg-[#2BC287]"
+                            className="absolute h-full w-1/3 bg-[#2BB94D]"
                             style={{
                                 animation: `scan ${1.2 + i * 0.4}s linear infinite`,
                                 animationDelay: `${i * 0.2}s`

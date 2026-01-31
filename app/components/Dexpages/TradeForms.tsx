@@ -669,13 +669,13 @@ export default function TradingForm({
                 </div>
 
                 {/* Buy / Sell */}
-                <div className="relative flex dark:bg-[#1e2441ab] bg-black/12 text-white rounded-md overflow-hidden">
+                <div className="relative flex dark:bg-[#1e2441ab] bg-[#f3f3f3] text-white rounded-md overflow-hidden">
                     <div
-                        className={`absolute inset-y-0 w-1/2 transition-transform duration-300 ${side === "Buy" ? "translate-x-0 bg-[#2BC287]" : "translate-x-full bg-[#F74B60]"
+                        className={`absolute inset-y-0 w-1/2 transition-transform duration-300 ${side === "Buy" ? "translate-x-0 bg-[#2BB94D]" : "translate-x-full bg-[#e90c27]"
                             }`}
                     />
                     {["Buy", "Sell"].map((s) => (
-                        <button key={s} onClick={() => setSide(s as any)} className="w-1/2 py-2 text-sm z-10 cursor-pointer">
+                        <button key={s} onClick={() => setSide(s as any)} className={`w-1/2 py-2 text-sm z-10 cursor-pointer ${side === s ? 'text-white' : 'dark:text-white text-black'}`}>
                             {s == "Buy" ? `${spotMode != 'spot' ? 'Buy/Long' : 'Buy'}` : `${spotMode != 'spot' ? 'Sell/Short' : 'Sell'}`}
                         </button>
                     ))}
@@ -877,7 +877,7 @@ export default function TradingForm({
                     {address ? (
                         <button disabled={isLoading || isTradePosition <= 0}
                             onClick={handleSubmit}
-                            className={`w-full py-2 rounded-md text-sm text-center ${side === "Buy" ? "bg-[#2BC287]" : "bg-[#F74B60]"} text-black`}
+                            className={`w-full py-2 rounded-md text-sm text-center ${side === "Buy" ? "bg-[#2BB94D]" : "bg-[#e90c27]"} text-black`}
                         >
                             {isLoading ? 'Loading...' : (isTradePosition > 0 ? 'Place Order' : 'No Balance to trade')}
                         </button>

@@ -123,7 +123,7 @@ export default function TradingChart({ pair }: TradingChartProps) {
             />
             {isLoading && (
                 <div className="absolute inset-0 z-20 flex items-center justify-center
-        dark:bg-white/60 bg-black/60 backdrop-blur-sm animate-fadeOut">
+        bg-white/60 dark:bg-[#1e2441ab]/50 backdrop-blur-sm animate-fadeOut">
                     <AbcDexLoader />
                 </div>
             )}
@@ -149,8 +149,8 @@ const chartTheme = {
         scaleLine: "#2b3139",
         text: "#ffffff",
 
-        up: "#2bc287",
-        down: "#f74b60",
+        up: "#2BB94D",
+        down: "#e90c27",
 
         area1: "#16a34a33",
         area2: "#16a34a00",

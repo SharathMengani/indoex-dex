@@ -29,8 +29,8 @@ export const RecentTrades = ({ trades, market }: { trades: Trade[], market: stri
                             <span
                                 className={
                                     t.side === "B"
-                                        ? "text-[#2BC287]"
-                                        : "text-[#F74B60]"
+                                        ? "text-[#2BB94D]"
+                                        : "text-[#e90c27]"
                                 }
                             >
                                 {formatPrice(t.price)}

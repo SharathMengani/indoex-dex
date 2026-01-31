@@ -53,7 +53,7 @@ export const OrderHistoryTable = ({ history, symbolmapping }: { history: any[], 
 
                                     {/* Direction */}
                                     <td
-                                        className={`px-4 py-3 ${order.side === "B" ? "text-[#2BC287]" : "text-[#F74B60]"
+                                        className={`px-4 py-3 ${order.side === "B" ? "text-[#2BB94D]" : "text-[#e90c27]"
                                             }`}
                                     >
                                         {order.side === "B" ? "Long" : "Short"}

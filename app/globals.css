@@ -93,6 +93,9 @@ body {
 th {
   text-align: left;
 }
+button {
+  cursor: pointer;
+}
 @keyframes letterPulse {
     0% {
         opacity: 0.3;

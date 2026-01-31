@@ -34,7 +34,7 @@ export const Checkboxes = (props: CheckboxProps) => {
                                         }
                                         props.setReduceOnly(false);
                                     }}
-                                    className="accent-[#2BC287]"
+                                    className="accent-[#2BB94D]"
                                 />
                                 Take Profit / Stop Loss
                             </label>
@@ -59,7 +59,7 @@ export const Checkboxes = (props: CheckboxProps) => {
                                         }
                                         props.setReduceOnly(!props.reduceOnly);
                                     }}
-                                    className="accent-[#2BC287]"
+                                    className="accent-[#2BB94D]"
                                 />
                                 Reduce-Only
                             </label>
@@ -78,7 +78,7 @@ export const Checkboxes = (props: CheckboxProps) => {
                                     type="checkbox"
                                     checked={props.twap}
                                     onChange={(e) => props.setTwap(e.target.checked)}
-                                    className="accent-[#2BC287]"
+                                    className="accent-[#2BB94D]"
                                 />
                                 Randomize
                             </label>

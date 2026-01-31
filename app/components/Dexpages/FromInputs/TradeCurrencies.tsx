@@ -52,7 +52,7 @@ export const TradeCurrencies = ({
 
             {/* Dropdown */}
             {open && (
-                <div className="absolute mt-2 w-full bg-[#27272A] rounded-xl shadow-lg z-50 overflow-hidden">
+                <div className="absolute mt-2 w-full bg-white dark:bg-[#1e2441] rounded-xl shadow-lg z-50 overflow-hidden">
                     {options.map((option) => (
                         <div
                             key={option}
@@ -60,8 +60,8 @@ export const TradeCurrencies = ({
                                 setInputCurrency(option);
                                 setOpen(false);
                             }}
-                            className={`${type == 'orderbook' ? 'text-[11px] px-2 py-1' : 'text-sm px-3 py-2 '}  cursor-pointer hover:bg-[#3F3F46]
-                ${inputCurrency === option ? "bg-[#3F3F46]" : ""}`}
+                            className={`${type == 'orderbook' ? 'text-[11px] px-2 py-1' : 'text-sm px-3 py-2 '}  cursor-pointer hover:bg-black/12
+                ${inputCurrency === option ? "bg-black/12" : ""}`}
                         >
                             {option}
                         </div>

@@ -19,7 +19,7 @@ export const ViewTsPSlPopup = ({ order, setSelectedOrder }: { order: any, setSel
             <div className="text-center mb-4 text-sm dark:text-gray-400">Order A (Entry)</div>
             <div className="border-2 border-[#4a4a4d] rounded-xl p-4 mb-6 max-w-md mx-auto space-y-2 bg-[#27272A]">
                 <div className="flex justify-between"><span>Order Type:</span> <span>{order.orderType}</span></div>
-                <div className="flex justify-between"><span>Side:</span> <span className={order.side === "A" ? "text-[#F74B60]" : "text-[#2BC287]"}>{order.side === "B" ? "Long" : "Short"}</span></div>
+                <div className="flex justify-between"><span>Side:</span> <span className={order.side === "A" ? "text-[#e90c27]" : "text-[#2BB94D]"}>{order.side === "B" ? "Long" : "Short"}</span></div>
                 <div className="flex justify-between"><span>Amount:</span> <span>{order.sz} {order.coin}</span></div>
                 <div className="flex justify-between"><span>Trigger:</span> <span>{order.triggerCondition}</span></div>
                 <div className="flex justify-between"><span>Price:</span> <span>${order.limitPx}</span></div>
@@ -37,7 +37,7 @@ export const ViewTsPSlPopup = ({ order, setSelectedOrder }: { order: any, setSel
                         <div className="text-center text-sm dark:text-gray-400 mb-2">Order B</div>
                         <div className="border-2 border-[#4a4a4d] rounded-xl p-4 bg-[#27272A] space-y-2">
                             <div className="flex justify-between"><span>Order Type:</span> {sl.orderType}</div>
-                            <div className="flex justify-between"><span>Side:</span> <span className={sl.side === "A" ? "text-[#F74B60]" : "text-[#2BC287]"}>{sl.side === "B" ? "Long" : "Short"}</span></div>
+                            <div className="flex justify-between"><span>Side:</span> <span className={sl.side === "A" ? "text-[#e90c27]" : "text-[#2BB94D]"}>{sl.side === "B" ? "Long" : "Short"}</span></div>
                             <div className="flex justify-between"><span>Amount:</span> {sl.sz} {sl.coin}</div>
                             <div className="flex justify-between"><span>Trigger:</span> {sl.triggerCondition}</div>
                             <div className="flex justify-between"><span>Price:</span> {getPriceLabel(sl)}</div>
@@ -52,7 +52,7 @@ export const ViewTsPSlPopup = ({ order, setSelectedOrder }: { order: any, setSel
                         <div className="text-center text-sm dark:text-gray-400 mb-2">Order C</div>
                         <div className="border-2 border-[#4a4a4d] rounded-xl p-4 bg-[#27272A] space-y-2">
                             <div className="flex justify-between"><span>Order Type:</span> {tp.orderType}</div>
-                            <div className="flex justify-between"><span>Side:</span> <span className={tp.side === "A" ? "text-[#F74B60]" : "text-[#2BC287]"}>{tp.side === "B" ? "Long" : "Short"}</span></div>
+                            <div className="flex justify-between"><span>Side:</span> <span className={tp.side === "A" ? "text-[#e90c27]" : "text-[#2BB94D]"}>{tp.side === "B" ? "Long" : "Short"}</span></div>
                             <div className="flex justify-between"><span>Amount:</span> {tp.sz} {tp.coin}</div>
                             <div className="flex justify-between"><span>Trigger:</span> {tp.triggerCondition}</div>
                             <div className="flex justify-between"><span>Price:</span> {getPriceLabel(tp)}</div>

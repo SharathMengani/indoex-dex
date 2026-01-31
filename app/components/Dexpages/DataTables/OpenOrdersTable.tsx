@@ -31,7 +31,7 @@ export const OpenOrdersTable = ({ orders, cancelOrder, cancelAllOrders, symbolma
                         <th className="px-4 py-3">Reduce Only</th>
                         <th className="px-4 py-3">Trigger Conditions</th>
                         <th className="px-4 py-3">TP/SL</th>
-                        <th className="px-4 py-3"><button onClick={() => cancelAllOrders('payload')} className={`${orders.length == 0 ? 'text-[#6D6D6F]' : 'text-[#2BC287]'}`} disabled={orders.length == 0}>Cancel All</button></th>
+                        <th className="px-4 py-3"><button onClick={() => cancelAllOrders('payload')} className={`${orders.length == 0 ? 'text-[#6D6D6F]' : 'text-[#2BB94D]'}`} disabled={orders.length == 0}>Cancel All</button></th>
                     </tr>
                 </thead>
 
@@ -59,7 +59,7 @@ export const OpenOrdersTable = ({ orders, cancelOrder, cancelAllOrders, symbolma
                                     <td className="px-4 py-3">{symbolmapping[o.coin.replace('@', '')] || o.coin}</td>
 
                                     {/* DIRECTION */}
-                                    <td className={`px-4 py-3 ${o.side === "B" ? "text-[#2BC287]" : "text-[#F74B60]"}`}>
+                                    <td className={`px-4 py-3 ${o.side === "B" ? "text-[#2BB94D]" : "text-[#e90c27]"}`}>
                                         {ordertype}
                                     </td>
 
@@ -104,7 +104,7 @@ export const OpenOrdersTable = ({ orders, cancelOrder, cancelAllOrders, symbolma
                                     <td className="px-4 py-3">
                                         <button
                                             onClick={() => cancelOrder({ coinName: o.coin, orderId: o.oid })}
-                                            className="text-[#F74B60] hover:text-red-300"
+                                            className="text-[#e90c27] hover:text-red-300"
                                         >
                                             Cancel
                                         </button>

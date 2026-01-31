@@ -43,8 +43,8 @@ export const TradeHistoryTable = ({ trades, symbolmapping }: { trades: any[], sy
                                     {/* Direction */}
                                     <td
                                         className={`px-4 py-3 ${t.side === "B"
-                                            ? "text-[#2BC287]"
-                                            : "text-[#F74B60]"
+                                            ? "text-[#2BB94D]"
+                                            : "text-[#e90c27]"
                                             }`}
                                     >
                                         {t.side === "B" ? "Long" : "Short"}
@@ -64,8 +64,8 @@ export const TradeHistoryTable = ({ trades, symbolmapping }: { trades: any[], sy
                                     {/* Fee */}
                                     <td
                                         className={`px-4 py-3 ${Number(t.fee) < 0
-                                            ? "text-[#F74B60]"
-                                            : "text-[#2BC287]"
+                                            ? "text-[#e90c27]"
+                                            : "text-[#2BB94D]"
                                             }`}
                                     >
                                         {t.fee}
@@ -74,8 +74,8 @@ export const TradeHistoryTable = ({ trades, symbolmapping }: { trades: any[], sy
                                     {/* Closed PNL */}
                                     <td
                                         className={`px-4 py-3 ${Number(t.closedPnl) >= 0
-                                            ? "text-[#2BC287]"
-                                            : "text-[#F74B60]"
+                                            ? "text-[#2BB94D]"
+                                            : "text-[#e90c27]"
                                             }`}
                                     >
                                         {t.closedPnl}

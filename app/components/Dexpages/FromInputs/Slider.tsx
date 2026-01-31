@@ -75,8 +75,8 @@ export function Slider({ value, onChange }: SliderProps) {
 
                 {/* Thumb */}
                 <div
-                    className="absolute top-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-[#2bc287a1] shadow cursor-pointer flex items-center justify-center
-               hover:scale-112 active:scale-112 active:shadow-[0_0_1px_1px_#2BC287] hover:shadow-[0_0_1px_1px_#2BC287] focus:ring-8 focus:ring-blue-500 transition"
+                    className="absolute top-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-[#2BB94Da1] shadow cursor-pointer flex items-center justify-center
+               hover:scale-112 active:scale-112 active:shadow-[0_0_1px_1px_#2BB94D] hover:shadow-[0_0_1px_1px_#2BB94D] focus:ring-8 focus:ring-blue-500 transition"
                     style={{
                         left: `min(100%, max(0%, ${clampedValue - 5}%))`
                     }}

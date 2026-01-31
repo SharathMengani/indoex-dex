@@ -67,7 +67,7 @@ export const PositionsTable = ({
                         <th className="px-4 py-3">Margin</th>
                         <th className="px-4 py-3">Funding</th>
                         <th className="px-4 py-3" >
-                            <button onClick={() => closeAllPositions('payload')} className={`${positions.length == 0 ? 'text-[#6D6D6F]' : 'text-[#2BC287]'}`} disabled={positions.length == 0}>Cancel All</button>
+                            <button onClick={() => closeAllPositions('payload')} className={`${positions.length == 0 ? 'text-[#6D6D6F]' : 'text-[#2BB94D]'}`} disabled={positions.length == 0}>Cancel All</button>
                         </th>
                         <th className="px-4 py-3">TP/SL</th>
                     </tr>
@@ -78,9 +78,9 @@ export const PositionsTable = ({
                         {paginatedTrades.map((p, i) => {
                             const pos = p.position;
                             const short = isShort(pos.szi);
-                            const color = short ? "text-[#F74B60]" : "text-[#2BC287]";
+                            const color = short ? "text-[#e90c27]" : "text-[#2BB94D]";
 
-                            const colorfunding = pos.cumFunding?.allTime < 0 ? "text-[#F74B60]" : "text-[#2BC287]";
+                            const colorfunding = pos.cumFunding?.allTime < 0 ? "text-[#e90c27]" : "text-[#2BB94D]";
                             const markPrice = mids[pos.coin];
                             const entryPrice = Number(pos.entryPx);
                             const size = Math.abs(Number(pos.szi));
@@ -97,7 +97,7 @@ export const PositionsTable = ({
                                 pos.marginUsed && Number(pos.marginUsed) !== 0
                                     ? ((unrealizedPnl / Number(pos.marginUsed)) * 100).toFixed(2)
                                     : "--";
-                            const colorpnl = unrealizedPnl < 0 ? "text-[#F74B60]" : "text-[#2BC287]";
+                            const colorpnl = unrealizedPnl < 0 ? "text-[#e90c27]" : "text-[#2BB94D]";
                             return (
                                 <tr key={i}>
                                     {/* COIN */}
@@ -154,7 +154,7 @@ export const PositionsTable = ({
                                     {/* CLOSE ALL */}
                                     <td className="px-4 py-3">
                                         <div className="flex items-center gap-3">
-                                            <button className="text-[#2BC287]"
+                                            <button className="text-[#2BB94D]"
                                                 onClick={() => {
                                                     setEditObj({ ...p, type: "Limit", marketPrice: mids[pos.coin] });
                                                     setType('marketlimit')
@@ -162,7 +162,7 @@ export const PositionsTable = ({
                                             >
                                                 Limit
                                             </button>
-                                            <button className="text-[#2BC287]"
+                                            <button className="text-[#2BB94D]"
                                                 onClick={() => {
                                                     setEditObj({
                                                         ...p,
